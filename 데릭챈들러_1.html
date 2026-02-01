@@ -1,0 +1,605 @@
+﻿
+            <!DOCTYPE html>
+            <html lang="ko">
+            <head>
+                <meta charset="UTF-8">
+                <title>데릭챈들러 - 1</title>
+                <style>
+                body {
+                    font-family: "Helvetica", "Apple SD Gothic Neo", sans-serif;
+                    background-color: #e5ddd5;
+                    margin: 0;
+                    padding: 20px;
+                }
+
+                .chat-container {
+                    max-width: 500px;
+                    margin: auto;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 15px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                }
+
+                .profile-info {
+                    display: grid;
+                    grid-template-columns: 40px 1fr;
+                    align-items: center;
+                    text-align: left;
+                }
+
+                .profile-img {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+                    vertical-align: middle;
+                }
+
+                .profile-info div {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .profile-info .name {
+                    font-weight: bold;
+                    font-size: 16px;
+                    margin-left: 8px;
+                }
+                .profile-info .handle {
+                    font-size: 12px;
+                    color: #818181;
+                    margin-left: 8px;
+                }
+
+                .message-info {
+                    display: grid;
+                    grid-template-columns: 40px 1fr;
+                    align-items: center;
+                    text-align: left;
+                }
+
+                .message {
+                    display: flex;
+                    margin-top: 12px;
+                    flex-direction: column;
+                    margin-bottom: 12px;
+                    margin-left: 5px;
+                    align-items: left;
+                    font-size: 14px;
+                }
+
+                .message img {
+                    display: block;
+                    padding: 0;
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                    max-width: 100%;
+                }
+                </style>
+            </head>
+            <body>
+                <div class="chat-container">
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2017236903192629248/eFHeynu5_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (소란을 별 감흥 없이 응시하다 이내 시선 돌린다. 테이블 위 미트파이 조금 잘라 입에 넣고는 우물거리더니 태연한 목소리로) 이번 학기 마법약 N.E.W.T 수업에 대해 들은 거 있어?
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (데릭은 파이를 입에 넣을 여유도 없이 책에 고개를 처박고 있다 눈만 빼꼼 들었다.) ... 레이튼, 장담컨대 올해 N.E.W.T 응시자 중에 마법약을 그렇게 판 사람은 너밖엔 없을 거야. ... 무슨 뜻인지 알지? (해봤자 그 이상으로 새로운 소식은 없다는 것이다.)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2017236903192629248/eFHeynu5_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (예상 답변에 고개 끄덕인다.) 고마워, 데릭. 그런 답을 원했어, 확신을 얻고 싶었거든. 물론, 네 답이 없었어도 그 사실이 변하는 건 아니겠지만, N.E.W.T를 앞두고 있으니 약간은 불안해져서... 다른 변수(특히 악센트를 줘 강조했다.)가 있을 지도 모르고. 데릭, 넌 준비 잘 해가고 있어?
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            ... 도움이 됐다니 참 다행이구나. (별로 위안삼을 만한 결과가 나오진 못하겠지만, 정말 기분만은 그랬다. 데릭은 이런 기분을 느낄 수 있는 순간이 아주 드물었다.) 나야 뭐⋯. 늘 공부가 문제는 아니었으니까. 높은 점수를 노리고 있는 것은 아니니 네가 참고할 만한 건 없을 거야.
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (다른 변수라면? 데릭은 되묻는 와중에도 깃펜 하나를 해먹었다.)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (되물음에 한참 뜸을 들이다) 너도 알다시피 내 몸에 흐르는 피는 순수하지 못하잖아? 그걸 넘어서… 저들의 표현을 빌리자면 ‘더럽지.’ 가령 그런 것들이 변수로 작용할까 걱정한 것 뿐이야. 졸업 후에도 마찬가지고. (잠시만. 깃펜 가져가 레파로- 주문 외운다. 다시 멀쩡해진 깃펜 건네며)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            항상 하는 생각인데, 데릭 너는 점술학이나 머글 미신 문학에 대해 깊이 공부해야 할 필요성이 있는 것 같아. 가령… 부적이나 불운을 막아주는… 그런 거 .
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (당연하게도, 시대는 격변하고 있었다. 아니, 이미 흐름 위에 놓인지 꽤 되었다! 데릭 챈들러가 저 하나 건사하는 데에 급급하던 동안, 학생의 본분을 다하던 레이튼 브라이언트에겐 온종일을 쏟고도 염려해야 할 것들이 많았다. 데릭은 아주 새삼스럽고도 새로운 사실을 들었다는 듯 눈을 끔벅인다.)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            ("고마워..." 겸연쩍고 할 말이 없어 다시 침묵을 주고받는다.) 생각해 보면 그래. ... 그럴 수도 있을 거야. 그렇게 되면 어떻게 할 건데? 잉크가 온통 번진 채로 시험지를 낸 나와, 완벽한 답을 적어낸 네가 점수가 비등비등하다면. (그래봤자 더러운 피와 반쯤 더러운 피의 대결이다.
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            데릭은 스스로의 애매한 위치를 힘입어 악의 없이-아마도- 묻는다.) 
+... ... (말끔해진 깃 펜을 쥐고 만지작거리다 담백하게 답하기를,) 간절한 사람 앞에서 답하긴 좀 민망하지만, 아주 극단적으로 삶이 치우쳐지면, 내겐 그런 것도 시간 낭비로 느껴지기도 해.
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            시대의 흐름에 맞서 나같은 개인이 뭘 할 수 있으려나. 아마도 그래, 순응해야겠지. 너와 내 점수가 똑같더라도 말이야. (늘 그랬듯 옳은 답을 내놓는다. 적어도 사회가 요구하는 답임은 분명했다. 몇 번이고 되새긴 말. 그러나 눈 앞의 상대가  데릭 챈들러였기에, 어쩐지 오답을 말하고 싶어졌다.)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            그렇지만  가끔은 억울해. 난 호그와트에 딱히 오고 싶어서 온 게 아닌데...응? 데릭, 너도 알잖아. 어릴 때는 내가 그리 성실한 학생이지 못했다는 거.(반쯤 더러운 피에게 더러운 피가 하소연한다. 달라지는 것은 아무것도 없을테지만.) 그러면 내가 만들어 네게 선물해주는 건?
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="null" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            그건 시간 낭비가 아닐 거 아냐. 난 어차피 행운이 있으나 마나 해서, 내 행운을 네가 좀 가져가는 것도 괜찮겠지.
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (레이튼 브라이언트에게 어째서 그럴 결심이 섰는지 알 수 없다. 순응과 반항. 세계는 오로지 두 가지 선택지만을 제시했는데, 적어도 데릭이 생각한 바로는- 세상의 누구라도 개죽음을 택하진 않을 것이다. 다만 생각은 자유롭지, 그렇다면 그건 앞서 제시한 '동질감' 탓인가?) ... 하지만 잘 해냈지.
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            그러니 지나치게 애쓰지 마. 어쩌면 너도 돌아갈 수 있을 거야, 영국의 머글 세계, 혹은 러시아로든. 넌 늘 옳은 답을 고르지. (잘 해냈다. 그걸로 끝. 방금은 오답이었다. 진실되었다고 해도 그것은 늘 현실과 상충한다. 그것을 깨달을 만한 나이가 되었다. 그렇지 않나?
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            *아니, 데릭에게는 어쩌면 아주 오래전부터...*) ... 네 행운을? (데릭은 숫제 웃는 것처럼 보인다. 끝내 흐려지고야 마는 불확실함.) 선물해 준다면 난 달게 받겠지. 곱이 아니라 덧셈이라면 유의미할 거야. 그렇다면... 답지 않게 좀 재볼까, 난 네게 행운이 따르길 바라니까.
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            레티(아주 고전적인 애칭이다.), 넌 네가 운이 좋은 편이라 생각해? 얼마만큼?
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2017236903192629248/eFHeynu5_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            글쎄, 데릭. 나는 내가 다시 돌아갈 수 있을 지 모르겠어. 머글 세계가 어떻게 돌아가는지조차 희미한걸. (애초에 돌아가고 싶다는 마음이 남아있는지도 모르겠다는 말을 꾹 삼킨다. 마법사가 아닌 그냥 ‘레이튼 R. 브라이언트‘에게 무엇이 남는지 잘 모르겠다며 중얼거리곤 눈 앞 상대 응시한다. )
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2017236903192629248/eFHeynu5_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            그렇다면, 데릭 넌 하고 싶거나 가고 싶은 곳이 있어? 
+… 졸업 후 날마다 오는 기회가 아니니 잘 생각해 봐. 난 정말로 행운이 ‘의미’없으니. 네가 우는 걸 더 이상 안 보고 싶기도 하고. (이 감정은 미약한 동질감과 응원에서 기인한다.  그는 정말로 ‘데릭 챈들러’가 잘되길 빌었으므로.)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2017236903192629248/eFHeynu5_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            O.W.L 식으로 점수를 매기자면, E 정도는 되겠지. 러시아, 아니 소련이 붕괴하기 전에 그곳을 떠나올 수 있었고, 부모 중 누구 하나 마법사가 아님에도 호그와트에 입학할 수 있었던 데다가 노력과 시간을 투자하면 그만큼의 결과값을 얻을 수 있는 재능이 있으니까.
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2017236903192629248/eFHeynu5_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            운 좋게도 좋은 기숙사에 배정받기도 했으니.. (아, 이건 너도 마찬가지니 제외해야겠네. 덧붙이고는 마저 말 잇는다.) 어때, 열심히 재본 결과는. 내 행운을 가져갈 의향이 생겼어?
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            ⋯⋯. 그럼, 여기에서, 줄곧 마법과- 마법 약과 함께 살아가겠다고? … (고리타분한 사고, 곧이어 설마, 아니겠지. 그런 중얼거림이 레이튼의 몫과 겹친다. 우리는 레이튼의 혼란한 처지에 대해 이야기를 하고 있었는데, 오히려 그가 더욱 당혹에 빠진 것만 같았다.)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            <img src="https://pbs.twimg.com/media/G-9BuPTXYAEDQX6?format=png&name=small" alt="이미지"><img src="https://pbs.twimg.com/media/G-9BuOyWcAAe6G1?format=png&name=small" alt="이미지">
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            일찍이… 어머니를 통해서. (기어가는 듯한 목소리였다. 하지만 그것이 ‘하고 싶은 것’, ‘가고 싶은 곳’이 되는가- 혹은 마찬가지, 상충해버리고 마는가.) ... 내가 너에 대해 잘못 생각하고 있었던 것 같아.
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2017236903192629248/eFHeynu5_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (네 중얼거림 듣는다. 데릭 챈들러는 대체 어떤 연유로 혼란을 겪는가.)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2017236903192629248/eFHeynu5_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">레이튼 S. 브라이언트</div>
+                          <div class="handle">@LS_Bryant</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (받친 등의 충격, 데릭은 바짝 당겨진 셔츠의 깃 따위보다도 자신의 행복을 바라던 이의 낯에서 생소한 불안을 읽어낸다. 유리가 깨어지는 듯한 소리가 들렸다. 나는 정말 네가 마음 상해할 것을 몰랐나? 내 말들이 너를 분노케할 것이라는 것을 몰랐나?) ... 좋은 일이지, 난 남들의 오지랖에 지금껏
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            죽지 않고 살았을지 몰라. 난 네 행운이 필요해, 하지만 네게도 그 행운이 필요해. 그 사실을 외면할 수 없어. (여유와 선별은 결코 떼어놓고 따질 수 없다. 정량적으로 측정할 수 없는 운 한 줌 정도야 다정으로 받아들일 수 있었음에도 데릭은 그것을 한사코 재어보았다.)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (네게선 앗아갈 수 없어―넌 내게 줄 것이 없어.
+난 너 또한 잘 살았으면 좋겠어―난 너를 무척이나... 염려하고 있어.
+
+그러니 이곳을 떠나―*이 세계는 빌어먹도록 틀렸으니까!*)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (크게 떠 있던 눈동자 속 일순, 빛이 들었다 사라진다. 실수했다. 하지만 이건 실수일 수 없다. 데릭은 스스로 떳떳하지 못하더라도, 이제서야 무게의 추를 자신에게 올려둔 이와 다른 마음을 먹고 있었다고 결코 생각하지 않는다. 생각하고 싶지 않다!)
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            네게 돌아갈 곳이 있으리라 생각했어(내가 그런 것처럼). ... 레이튼, 난 네가 이곳에 살 필요는 없을 거라고 생각했어. (데릭은 레이튼의 손 위를 덮어 다독인다. 뒤늦게 통증이 밀려와 표정은 썩 좋지 않았다. 다만 불안정한 다정이 전부였다.）
+                        </div>
+                    </div>
+                
+                    <div class="profile-info">
+                      <img src="https://pbs.twimg.com/profile_images/2016490085584445441/1Bg_Fy0w_bigger.jpg" alt="프로필" class="profile-img">
+                      <div>
+                          <div class="name">데릭 챈들러</div>
+                          <div class="handle">@DER1CKCH4ND1ER</div>
+                      </div>
+                    </div>
+                    <div class="message-info">
+                        <div>
+                            <p> </p>
+                        </div>
+                        <div class="message">
+                            (레이튼 브라이언트는 사과하지 않아도 된다. 아마 데릭이 재어본 것은 너의 행운이 아닌 불행일 테니까.)
+                        </div>
+                    </div>
+                
+                </div>
+            </body>
+            </html>
+          
