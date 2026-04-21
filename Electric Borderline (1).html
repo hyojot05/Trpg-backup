@@ -1,0 +1,3482 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><title>Electric Borderline</title><style>
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}	
+body {margin:0; padding:0;}
+#cocoback {position:relative; line-height: 1; font-family: 'Pretendard', 'NanumBarunGothic', 'NanumGothic', sans-serif;}
+#cocoback p {position:relative; color:#fff; font-size: 16px;}
+#tr_top { position:fixed; z-index:2; padding: 15px 3%; width:94%; height: 30px; background: #212121; display: flex; align-items: center; justify-content: space-between; top:0; }
+#tr_top a { font-weight:bold; color:#fff; text-decoration: none; font-size: 20px; }
+#tr_top a:hover {color: #ae70ff;} 
+.content { padding-top: 60px; background:#212121;}
+.tcimg { width:100%; max-width:1200px; display: block; margin: 0 auto; }
+
+.player { position:relative; padding: 11px 15px 11px 65px; line-height: 1.9; letter-spacing: -0.01em; border-top: 1px solid rgba(255,255,255,0.12); margin:0; }
+.player b { display: block; line-height: 1; font-size: 0.98em; margin-bottom: 5px; color:#888888; }
+.player:after {display: none; width:40px; height:40px; position:absolute; top:20px; left:15px; background-size: cover; background-color: rgba(0,0,0,0.2); }
+
+.tab {position: relative; overflow: hidden; background: #666;}
+.tabtitle {position: absolute; left: 10px; top: 10px; z-index: 1; padding: 7px; border-radius: 5px; background: #ffffff; font-size: 12px; font-weight: bold; color: #333; max-width: 23px; overflow: hidden;}
+.tabMain .tabtitle, .tabTalk .tabtitle {display:none;}
+.tabMain .player {min-height: 50px; padding: 20px 15px 11px 65px;}
+.tabMain .player:after {display: block;}
+
+.tabMain { background: #2c2c2c; } 
+.tabInfo { background: #455a64; } 
+
+.tabSecret {border-left: 10px solid #ae70ff; border-top: 1px solid rgba(255, 255, 255, 0.3); background: #000;}
+.tabSecret .tabtitle { padding: 5px 15px; font-size: 12px; width: fit-content; max-width:none; margin-bottom: 9px; position: relative; background: #ae70ff;} 
+.tabSecret .player b { font-size:13px; color:#999!important; display:inline; margin-right: 10px;}
+.tabSecret .continued-line b {display:inline!important; visibility: hidden;}
+.tabSecret .tabtitle + .player {border-top: 0;}
+
+#cocoback .tabTalk p { font-size: 0.85em; } 
+.tabTalk { background: #424242; } 
+.tabTalk .player b { font-size:13px; color:#999!important; display:inline; margin-right: 10px;}
+.tabTalk .continued-line b {display:inline!important; visibility: hidden;}
+
+.p_c_gm b, .p_c_gmdesc b { display:none; } 
+.tabMain .p_c_gm { padding: 11px 15px 11px 65px; min-height: unset; background: #333; } 
+.tabMain .p_c_gmdesc { padding: 11px 15px 11px 15px; min-height: unset; text-align:center; background: #5b5b5b; } 
+.p_system { text-align:center; font-size: 0.85em!important; color: #ddd; padding-left: 15px!important; display: flex; flex-direction: column; align-items: center;} 
+.p_system b { color:#fff!important; background:#999; width: fit-content; padding: 0 10px; margin-bottom: 10px; border-radius:25px;}
+
+.hidden-tab { display: none !important; } 
+#tabToggleButtons { display: flex; gap: 5px; }
+.toggle-switch { cursor: pointer; font-size: 12px; display: flex; align-items: center; background: #333; padding: 5px 7px; border-radius: 20px; color:#fff; accent-color:#ae70ff; }
+
+span.dice-line { background-color: #111; font-size: 0.85em; padding: 5px 20px; border-radius: 5px; border: 2px solid rgba(255, 255, 255, 0.3); display: inline-block; margin: 5px 0; }
+
+.continued-line b, .continued-line:after { display: none!important; }
+.continued-line { margin-top: -12px!important; padding-top: 0px !important; border-top: none!important; min-height: unset!important;}  </style></head><body><div id="cocoback"><div id="tr_top"><a href="#">Electric Borderline</a><div id="tabToggleButtons"><label class="toggle-switch">잡담 <input type="checkbox" data-target="tabTalk" checked></label><label class="toggle-switch">정보 <input type="checkbox" data-target="tabInfo" checked></label><label class="toggle-switch">GM <input type="checkbox" data-target="tabEtc1" checked></label></div></div><div class="content"><img src="https://pbs.twimg.com/media/HGaNVHXbAAA2eyw?format=jpg&name=small" class="tcimg"><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    너무 깨끗해서 내가 감히 채팅을 보내도 되는 것인가 의문이 들지만 아무튼 출석한 민달퍙 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    오오말랑이거래 
+  </p><p class="player p_c2"><b>배다예</b>
+    끄응... 잠만뇨 주크박스가 왜 안될까 
+  </p><p class="player p_c1"><b>서이본</b>
+    기다림. 
+  </p><p class="player p_c2"><b>배다예</b>
+    아니 근데 이본이 표정 왤케 착순이가 많죠 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    보고 깜짝 놀랫는데 
+  </p><p class="player p_c1"><b>서이본</b>
+    스물후반이면 쪼까 쾌남모드고, 엔간하면 화도 안내고, 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    정신병없음이이에. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아 표정 골뱅이 깜빡햇다 넣고 잇어야디 
+  </p><p class="player p_c2"><b>배다예</b>
+    끄응... 카톡으로 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    주크박스 보내드림 
+  </p><p class="player p_c1"><b>서이본</b>
+    들어왓다!! 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    지금 아무 소리도 안 나오고 잇는게 맞는건가요?? 
+  </p><p class="player p_c2"><b>배다예</b>
+    마자요. 지금 계속 로딩중이라...  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    노트북 안되길래 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    폰으로 하는중 
+  </p><p class="player p_c1"><b>서이본</b>
+    휴. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player p_c2"><b>배다예</b>
+    혹시 이제는 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    들리시나욤 
+  </p><p class="player p_c1"><b>서이본</b>
+    들린다요!!!!!!! 
+  </p><p class="player p_c2"><b>배다예</b>
+    오케이 준비됐으면 고고하까요 
+  </p><p class="player p_c1"><b>서이본</b>
+    네!!!!!!!!드가자드가자 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    . 
+  </p><p class="player continued-line p_c3"><b></b>
+    . 
+  </p><p class="player continued-line p_c3"><b></b>
+    . 
+  </p><p class="player continued-line p_c3"><b></b>
+    ────────────────<br> Electric Borderline   <br>────────────────<br> KPC 배다예 PC 서이본　　 <br> 　　　　　　　　　　　　<br> 2026. 04. 21　　　　　  <br> 　　　　　　　　　　　　<br>──────────────── 
+  </p><p class="player continued-line p_c3"><b></b>
+    Chapter 0. ZERO LINE!  
+  </p><p class="player continued-line p_c3"><b></b>
+    유명한 말이 있습니다. 시간은 금이다. 아마도 그만큼 인생을 소중하게 여기라는 뜻일 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    하지만, 고작 하루라고 생각하면 금이라고 쳐도 고작 한 톨이 아닌가요. <br>금은방에 가서도 딱 그 정도만 팔아달라고 하면 기묘한 시선을 받을 겁니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    스물네시간이 지나면 다시 찾아드는 게 하루일 뿐입니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    도시를 구성하는 일부의 하루. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아무래도좀아포겪엇으면인생이소중해야지... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    현대 사회를 살아가는 사람이라면 누구나 공감할 거예요. 당신도 분명 어제라면 그 말에 인정했을 사회인입니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 아 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    오늘만큼은 조금 다를 테지만. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그렇습니다. 까마득하게 느껴지던 꿈에 들어서게 된 첫날. 
+  </p><p class="player continued-line p_c3"><b></b>
+    누구라도 가슴이 부푸는 건 당연합니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    물론, 현실이 영화나 드라마에서 나오는 것과 매우 다르다는 건 알고 있더라도······.<br>그토록 노력해왔던 결과이지 않습니까. 
+  </p><p class="player continued-line p_c3"><b></b>
+    당신이 보통보다 우수하거나, 혹은 좀 더 건조하다면 경우가 다르겠지만.<br>어쨌든 숨이 턱 끝까지 차오르던 훈련도. 스탠드 불빛을 켜두고서 지새웠던 밤도. <br>지금처럼 가슴 한쪽에 경찰수첩을 넣어두기 위해 달려왔던 궤적입니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    경찰이되....O///////O 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    잘 해낸다면 가늠해오던 활약도 거짓말이 아닐 거예요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    잘 해낸다면 가늠해오던 활약도 거짓말이 아닐 거예요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그걸 위해서라도 오늘 만나게 될 파트너가 부디 좋은 사람이어야 할 텐데 말이죠.  
+  </p><p class="player continued-line p_c3"><b></b>
+    세상에 유능하면서도 친절한 직장 동료는 없다시피 하다지만. 적어도 둘 중의 하나는 들어맞아야 해요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    도착하기까지 아직 시간이 남아있습니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    우리 다예 좋은 사람이지................아 마음조아 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    내 파트너!!!!!!!!!!!! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    서울의 교통체증을 감당하는 틈에 할 수 있는 일이 적다는 게 불운이군요. 이야기를 나눌 사람도 없을뿐더러 휴대전화를 꺼내는 것도, 여러모로 좀 그렇죠. 
+  </p><p class="player continued-line p_c3"><b></b>
+    여길 보라는 듯 운전석의 바로 옆에 붙어있는 라디오에 시선이 가지 않나요?<br>주파수를 한 번 맞추어보도록 합시다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 듣기 판정 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=60  듣기 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 78 ＞ 78 ＞ 실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아띱 
+  </p><p class="player p_c3"><b></b>
+    하 
+  </p><p class="player continued-line p_c3"><b></b>
+    ㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    치직. 치지직. 
+  </p><p class="player continued-line p_c3"><b></b>
+    한 손으로 핸들을 잡은 채로 주파수를 조정하려니 쉽지 않습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    언뜻 기상캐스터의 낭랑한 목소리가 들리지만 전부 이해하기엔 어려워요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    "서울 상공은 비구름이 몰려들면서······. 치직. 흐린 날씨······. 번개······."  
+  </p><p class="player continued-line p_c3"><b></b>
+    아, 더 듣고 있을 필요는 없겠습니다. 어쨌든 날씨가 좋지 않을거라는 뜻이잖아요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    괜히 라디오를 켰을까요.  기분 전환을 위해서는 다른 게 필요할지도 모르겠습니다.<br>오늘은 완벽한 하루가 되어야만 하는데. 괜히 불길하네요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    시계를 보면 아슬아슬한 시간입니다. 늦지 말아야 합니다. 차가 막혔다는 말은 변명이 될 수 없어요. 서두르는 게 좋아요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어라, 저쪽에서 차가 멈춰섭니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    운전석에서 인도로 막 내리는 사람이 아슬아슬해 보이는데······. 쉽게 내리지 못하는 것 같아요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    심지어 도와주는 사람도 없네요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아 배다예 운전도 못해 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    잠시 갓길에 주차를 할 수 있습니다. 도움을 주기 위한 정황이었으니 주변의 차량도 이해할 겁니다. 교통에 큰 방해가 되지 않을 거예요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    다만, 나 자신을 향한 영향만 따지고 보면 쉽지 않습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    곧 돌아오는 초록 불을 넘겨버리게 된다면 꼼짝없이 지각하게 될 테니까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    물론 지나간다고 해도 상관없습니다. 아무도 강요하지 않는걸요. 심지어 저 사람도 당신의 존재를 모르고 있어요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    선택도, 고뇌도. 
+  </p><p class="player continued-line p_c3"><b></b>
+    오로지 서이본, 당신의 몫입니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    배다예 아니면 걍 시민 도와주다 지각한 놈 되는거임? 힘들다 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    나 첫날부터 폐급 
+  </p><p class="player p_c3"><b></b>
+    첫날지각해서폐급으로낙인찍히기 vs 그냥경찰되기. 
+  </p><p class="player continued-line p_c3"><b></b>
+    시민을위해일한거라고어쨌든 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    시민 도와주려고 경찰됐지, 지각 안 하려고 경찰했겠냐. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (핸들 천천히 꺾어 갓길에 정차한다.) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (지각 폐급 확정!) 
+  </p><p class="player p_c3"><b></b>
+    더 생각할 겨를이 없습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    지각을 하는 것도 변명해서는 안될 테지만. 도움이 필요한 사람을 두고 간다는 건 도대체 어떤 변명을 대라는 건가요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    차량은 순식간에 인도와 가까운 가장자리에 멈춥니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    차에서 내린 당신은 아직도 차량에서 내리지 못하는 사람에게 향했습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    머리 위로 드리워진 그림자 때문일까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    무수한 발소리가 뒤섞인 서울인데도. 운전석에 있는 사람은 고개를 들었습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    갈색 머리카락에 단정해 보이는 생김새가 눈에 띄네요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아, 이럴 때가 아닙니다. 어서 내리는 걸 도와줘야죠. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    그냥 시민이었어 다행이다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c4"><b>갈색 머리카락의 여자</b>
+    감사합니다... 친절한 분이시네요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    배다예 너만큼은 폐급이 아니라서 다행이야 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    나는 폐급이 되어버렸지만 
+  </p><p class="player p_c3"><b></b>
+    ㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    해야할 일인데요 뭐. 
+  </p><p class="player p_c4"><b>갈색 머리카락의 여자</b>
+    아녜요, 덕분에 곤란한 상황을 면했어요.  
+  </p><p class="player p_c3"><b></b>
+    당신의 도움으로 운전자는 무사히 내립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    인도에 깐 벽돌이 유독 높았던 탓일까요. 화단에 있는 덤불이 상하지 않기 위함이었던 걸까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    곤혹스러워 보이던 그녀는 한숨을 내뱉습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 관찰 판정 
+  </p><p class="player p_c1"><b>서이본</b>
+    아직 운전이 미숙하신가봐요. 이쪽 길은 조심하셔야겠네. 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  관찰력 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 100 ＞ 100 ＞ 대실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    띠발ㅋㅋ 
+  </p><p class="player p_c3"><b></b>
+    아실환가진짜 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    핰ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player p_c3"><b></b>
+    주사위도 폐급이 되면 어뜩함 
+  </p><p class="player p_c1"><b>서이본</b>
+    아진짜개웃겨ㅠㅠㅠㅠㅠㅠ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    차에서 내린 여자를 유심히 살펴보면 어쩐지 미묘하게 걸음이 불편하다는 것을 알 수 있습니다. 
+  </p><p class="player p_c4"><b>갈색 머리카락의 여자</b>
+    그게... 다른 곳보다 인도의 벽돌이 높아서 당황했지 뭐에요. 덕분에 편히 내릴 수 있었어요.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    나도 혹시 모르니까 주사위 점검해야지 
+  </p><p class="player continued-line p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=75  행운 (1D100&lt;=75) 보너스, 패널티 주사위[0] ＞ 55 ＞ 55 ＞ 보통 성공
+  </span></p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    아하... 그럼 어디 다른 곳은 불편하신건 없으시고요? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㅠㅠㅠㅠㅠㅠㅠㅠㅠ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c4"><b>갈색 머리카락의 여자</b>
+    아- 덕분에. 괜찮습니다. 
+  </p><p class="player p_c3"><b></b>
+    몸에 대해 질문하자마자 여자는 불편한 기색과 함께 돌아섭니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    억울하다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    그리고... 
+  </p><p class="player continued-line p_c3"><b></b>
+    아, 뭔가 잊은 것 같더라니! 
+  </p><p class="player continued-line p_c3"><b></b>
+    분명 지각입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    첫날부터 지각해버리는 희대의 상황이 벌어지고 말았습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    태백고에 다닐 때야 눈치껏 자리에 앉았을 테지만. 이런 상황에는 어쩌면 좋죠. 간이 배 밖에 나와버린 꼴입니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (음~ 이미 늦었지 뭐.) 
+  </p><p class="player p_c3"><b></b>
+    어서 차 안에 올라타도록 해요. 서울 경찰청을 향해서 출발합시다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    차량 사이를 지나며 도착하게 되었습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    서울 경찰청. 이 나라의 법과 질서를 수호하는 요충지.  
+  </p><p class="player continued-line p_c3"><b></b>
+    앞으로 당신의 직장이 될 곳. 이곳에 들어섰다는 사실에 감격하기 전에······. <br>빨리 움직이는 게 좋겠습니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    주차장에 들어섰으니 적당한 곳에 차를 대도록 해요. 강력반의 본부는 경찰청 4층에 있습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    엘리베이터가 있습니다. 막 닫히고 있어요! 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 민첩 판정 
+  </p><p class="player p_c1"><b>서이본</b>
+    안 죽어, 안 죽어. 끽해야 해고밖에 더 있냐.  
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=50 민첩 (1D100&lt;=50) 보너스, 패널티 주사위[0] ＞ 83 ＞ 83 ＞ 실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    어어ㅋㅋ 
+  </p><p class="player p_c3"><b></b>
+    아니진짜이분왜이러시죠? 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    (어차피 걸음도 느려.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    이본이 어른되고 독기 빠지더니 
+  </p><p class="player continued-line p_c3"><b></b>
+    폐급됐네 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=99 폐급 (1D100&lt;=99) 보너스, 패널티 주사위[0] ＞ 46 ＞ 46 ＞ 어려운 성공
+  </span></p><p class="player p_c3"><b></b>
+    이거성공한게진짜개웃기네 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    엘리베이터는 당신을 두고 올라갑니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    계기판의 숫자가 바뀌는 걸 망연히 볼 수밖에 없어요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    계단이라도 어서 올라요! 
+  </p><p class="player p_c1"><b>서이본</b>
+    한국이랑 나는 안 맞나보다.ㅎ...  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (계단으로 뛰어간다!) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    아니그런말하면어떠해요.... 표정 샹  
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    이른 아침부터 고생을 한 기분입니다. 고작 도착했을 뿐인데도 말이죠. 어쨌거나 도착했습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    사방에 있는 책상과 바빠보이는 사람들. 통유리 너머로는 수많은 화면을 보고 있는 직원.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그리고······. 못마땅한 얼굴로 팔짱을 낀 남자. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    이중에서 가장 늙어보이는 것만 보아도 감이 올 겁니다. 직감이 틀리지 않다는 걸 알려주듯이 남자는 다짜고짜 말합니다. 
+  </p><p class="player p_c5"><b>강순철</b>
+    수사부 형사과 강력계 팀장, 강순철이다. 자네는? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아 얼굴폭력적이에요 
+  </p><p class="player p_c5"><b>강순철</b>
+    끄응.... 승질 드러워 보이는 남자 포트레잇을 찾다 보니 
+  </p><p class="player continued-line p_c5"><b>강순철</b>
+    선택지가 별로 없었어, 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    수사부 형사과 강력계 경위, 서이본. 오늘 발령 받았습니다. 늦어서 죄송합니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아진짜폭력적 고운자관캐들만보고자란내눈.......... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c5"><b>강순철</b>
+    나중에 경위서를 제출하도록. 
+  </p><p class="player continued-line p_c5"><b>강순철</b>
+    그나저나... 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    경위가 경위서를 제출 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    자신의 이름을 소개한 남자는 당신에게 무전기를 넘겨줍니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    요즘은 휴대전화가 있음에도 이걸 사용하는군요. 왠지 영화나 드라마가 떠오르지 않나요? 
+  </p><p class="player continued-line p_c3"><b></b>
+    강순철 경감은 걸걸한 목으로 두어번 기침하더니 말합니다. 
+  </p><p class="player p_c5"><b>강순철</b>
+    저 방 안에 앞으로 파트너 형사가 될 사람이 있다. 가서 인사를 하고. 그 친구에게 알려준 걸 똑같이 말해야겠군. 
+  </p><p class="player continued-line p_c5"><b>강순철</b>
+    자네들의 콜사인은 405. 경찰 내선으로 무전을 할 때는  405로 소속을 밝히도록. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    와 잠만 개좋 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    오우씻!이렇게까지한다이거지 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c5"><b>강순철</b>
+    근무는 24시간. 다음 하루를 쉬는 교차 근무를 하니 참고하고. 전체 출동 명령이 떨어지지 않는 한 이 체제를 유지하니, 1기수를 보조하기만 해도 늘어지는 날은 없을 거다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    저진짜군경콤장난아닙니다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c5"><b>강순철</b>
+    순찰차의 열쇠는 벽에 걸려있으니 출동할 때 챙긴다. 당연하겠지만 지급 받은 총은 되도록 쓰는 일이 없어야 할 거야. 알겠나? 
+  </p><p class="player p_c3"><b></b>
+    귀찮다는 듯 말을 이은 남자는 이만 가보겠다는 말과 함께 떠납니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    강 팀장이 떠나기 전 가리킨 벽면에는 열쇠가 걸려있습니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    그중에서는 405라는 라벨링이 붙어있는 자동차 열쇠도 있어요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    지금까지 도로에서 고생을 하고 오기도 했고. 자차가 있는 입장에서 자동차 열쇠를 보고 설레는 건 드문 일입니다만. 어쩌면 발생했을지도 모릅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    막연히 직업이라는 생각만 하고 있다면 단순히 기억해두었을 뿐일 테지만. 심지어 더 중요한 게 남아있어요.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    저 문 너머에 파트너가 있을 겁니다. 먼저 도착해서 기다리고 있던 걸 보면 성실한 걸까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    앞으로 오래 마주할 만큼 첫인상부터 잘 남겨야 할 텐데. 
+  </p><p class="player continued-line p_c3"><b></b>
+    마음의 준비가 되었다면 문을 열어봅시다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    문고리를 잡아 돌리자 문이 열립니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    그러신것같아요 
+  </p><p class="player continued-line p_c3"><b></b>
+    말안해도 
+  </p><p class="player continued-line p_c3"><b></b>
+    충분히알고있.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그거모르면 퍙님 트친ㅇ 아니고 간첩임 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    사과가 떨어지면 땅 위를 뒹굴고. 닭이 알을 낳으면 달걀이듯이. 매우 자연스럽고 명백한 사실이 이루어지고 있습니다. 다만······.  
+  </p><p class="player continued-line p_c3"><b></b>
+    왜 그 사실의 끝이 이상한 겁니까.  
+  </p><p class="player continued-line p_c3"><b></b>
+    두 눈을 감았다가 뜨고. 천장의 백열등을 올려다보았다가 고개를 내리고. 별의별 짓을 해보아도 눈앞에 있는 사람은 달라지지 않습니다.  
+  </p><p class="player p_c1"><b>서이본</b>
+    엥. 
+  </p><p class="player p_c3"><b></b>
+    착각이 아닐 겁니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    ? 
+  </p><p class="player p_c3"><b></b>
+    애초에 저 얼굴과 똑같은 도플갱어가 존재할 리도 없습니다. 이런 생각을 한 건 이쪽도 마찬가지였었나 봐요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    하 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    잠이 덜 깼나... (눈 비빔) 
+  </p><p class="player p_c2"><b>배다예</b>
+    엥....? 선배? 
+  </p><p class="player p_c1"><b>서이본</b>
+    얘가 왜 여기있지? 
+  </p><p class="player p_c2"><b>배다예</b>
+    그건 제가 할 말인데요...!  
+  </p><p class="player p_c1"><b>서이본</b>
+    너... 결국 저질렀냐?  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (경찰복은 안중에도 없음.) 
+  </p><p class="player p_c2"><b>배다예</b>
+    선배 혹시 제가 범법 행위를 저질러서 여기에 있는 거라고 생각하시는 건 아니죠? 
+  </p><p class="player p_c1"><b>서이본</b>
+    아니라고? 그것 나름 충격적인데. 
+  </p><p class="player p_c2"><b>배다예</b>
+    선배야말로 영국 가셨던 거 아니었나...  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    잠만 브금 너무 좋으네 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    영국 몇 년 지내다보면 질릴 수도 있지. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그래서... 여기 있던 다른 사람 못 봤어? 
+  </p><p class="player p_c2"><b>배다예</b>
+    확실히 음식 꼬라지 보면 질릴 것 같기도 해요. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    .... 
+  </p><p class="player p_c1"><b>서이본</b>
+    제발. 
+  </p><p class="player p_c2"><b>배다예</b>
+    선배, 파트너 저라고요.  
+  </p><p class="player p_c1"><b>서이본</b>
+    있었다고 해라. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아냐. 그럴 리 없어... 
+  </p><p class="player p_c2"><b>배다예</b>
+    예, 뭐 그러면 문 열고 나가서 파트너가 사라진 것 같은데 혹시 어딨냐고 한 번 여쭤보시든가요. (황당....) 
+  </p><p class="player p_c1"><b>서이본</b>
+    아... 한국 돌아오는 선택은 역시 재고해볼걸 그랬다. (...) 
+  </p><p class="player p_c2"><b>배다예</b>
+    이 사람이 진짜.  
+  </p><p class="player p_c1"><b>서이본</b>
+    그래... 받아들여야지 내 팔자인데. 이놈의 태백고는 어딜가나 따라붙네. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    자, 출근합니다, 예. 
+  </p><p class="player p_c3"><b></b>
+    삐. 삐.  
+  </p><p class="player continued-line p_c3"><b></b>
+    반복하는 두 번의 기계음이 뒷덜미를 붙잡습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    두 사람의 음성을 막아 세우듯이 무전기에서 호출이 울립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    "여기는 서울경찰청. 강력팀 4기수에게 알린다." 
+  </p><p class="player continued-line p_c3"><b></b>
+    "서울시 중구 세종대로 110 인근 교차로 사고 발생." 
+  </p><p class="player continued-line p_c3"><b></b>
+    "차량 충돌로 인한 전봇대 파손 및 운전자 중상. 피해 및 사건 사실을 파악 바란다." 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    세종대로 하 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    일 한번 크다 
+  </p><p class="player p_c3"><b></b>
+    참고로 그냥 서울 시청 주소 갖다 씀 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    이럴 때가 아닙니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    기수 405, 첫 출동을 할 때가 왔습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    Chapter 1. START LINE! 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    쑻ww 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    출근하자마자 바로 나가야 할 일이 생기다니. 
+  </p><p class="player continued-line p_c3"><b></b>
+    강력팀의 하루가 쉽지 않다는 걸 실감하기엔 충분합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    괜히 망설이는 일은 없도록 해요. 이런 바쁜 삶이 꿈이었잖아요. 물론, 시간이 지나면 당신도 무뎌질지도 모릅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    적응이라는 건 그런 거니까요. 불씨가 꺼져버린 열정이란 어디에서나 찾아볼 수 있는 모습입니다. 누군가의 가능성이란 곧 나의 가능성이지 않습니까. 
+  </p><p class="player continued-line p_c3"><b></b>
+    중요한 건 이 순간이 아니라는 것뿐. 
+  </p><p class="player continued-line p_c3"><b></b>
+    적어도 지금만큼은 호승심을 안고서 경찰수첩을 품에 둡시다. 심장과 가장 가까운 위치에. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아진짜좋으다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    어차피 주머니에 넣어두었으니 빼냈다가 다시 넣을 필요는 없을 테지만요.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    좋다는말만반복함 왜냐면진짜좋으니까 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    그러므로 이건 두 가지의 의미를 담고 있습니다. 첫 번째로는 아주 쓸데없는 짓이라는 점. 두 번째로는 당신이 아직 발걸음을 떼지 못했다는 점. 
+  </p><p class="player p_c2"><b>배다예</b>
+    선배. 뭐해요. 안 가려고?  
+  </p><p class="player p_c1"><b>서이본</b>
+    가야지. 간다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    까비. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (황당..) 첫날부터 놓고가게? 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ...음. 근데 나 같아도 파트너가 배다예라면 그럴 것 같다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    (무슨 말을 하는지 가만히 듣고 있다가....)  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    웃기시네, 진짜. 객관적으로 선배보다는 제가 낫거든요? 
+  </p><p class="player p_c1"><b>서이본</b>
+    와, 미친. 내가 인생을 잘못 살기는 했나보다. 너한테 이런 소리까지 듣는다고?  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아니 표정 하 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    진짜개웃 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    .... (뭐라 대꾸할 말이 없는지 문을 열고 나간다.) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    얼른 따라오기나 해요! 키 챙기고! 
+  </p><p class="player p_c1"><b>서이본</b>
+    예예 후배님~ (키 챙겨들고 따라 나간다.)  
+  </p><p class="player p_c3"><b></b>
+    키를 챙겨 엘리베이터를 타고 내려갑니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    계기판의 숫자가 하나씩 내려가다 보면 지하 1층에 도착하게 되네요. 기수가 타는 순찰차가 나열되어있는 모습은 장관입니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    기둥에 새겨진 구획과 순서를 살펴보면 어디인지도 뻔히 알 수 있지요. 4열에 다섯번째 차량.  
+  </p><p class="player continued-line p_c3"><b></b>
+    당장 올라타기 전에 먼저 정해야 할 것도 있습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그걸 먼저 알아차린 듯 배다예는 말합니다.  
+  </p><p class="player p_c2"><b>배다예</b>
+    근데 선배, 운전할 줄 알아요? 
+  </p><p class="player p_c1"><b>서이본</b>
+    운전할 줄 모르는데 경찰 채용된 것도 어찌보면 대단하겠지. (아무튼 면허있다는 뜻)  
+  </p><p class="player p_c2"><b>배다예</b>
+    음... 그러니까 운전 할 수 있다는 거죠? 왜 이렇게 돌려 말해요, 어렵게.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    똑똑하다고 유세 부려요?  
+  </p><p class="player p_c1"><b>서이본</b>
+    아 진짜 왜케 꼬아들어.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    닌 가만보면 그냥 내가 마음에 안 드는 것 같다. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    나라고 좋아서 너랑 이러고 있냐. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아진짜 또 말로패겠지 무섭다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    흥, 선배가 말 먼저 어렵게 했거든요? 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    아까도 계~속 파트너 어딨냐면서 궁시렁거리고. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    당연히 짜증나는 거 아냐? (메롱하고 자연스레 조수석에 먼저 탄다.) 
+  </p><p class="player p_c1"><b>서이본</b>
+    와... 나 진짜 앞으로 얘랑 일 하라고? 쉽지 않다 직장생활. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (운전석에 타고... 벨트까지 찬 뒤 시동 걸며) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    근데, 나 이 말 안했다. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    평소에 권태주가 태워주는 차만 탔다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    권태주가 태워주는 차는 어떤 차일까. 좀비 나오나 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    (운전대 잡음) 그런 줄 알라고~  
+  </p><p class="player p_c2"><b>배다예</b>
+    .... (정확히 무슨 말인지는 모르겠지만 불길해졌다.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    이게무슨소리지 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    잠만, 잠만. 선배, 선배? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    평소에 운전 안했다는 뜼ㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    운전 잘 할 수 있는 거 맞죠? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    장롱면허였냐고~!!! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    아무렴~  
+  </p><p class="player p_c2"><b>배다예</b>
+    한국에서도 운전 가능한 거 맞죠? 영국은 차선 반대 아닌가? 아닌가? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    군용차량은 몰아봤겠지 /난폭운전 
+  </p><p class="player p_c2"><b>배다예</b>
+    ㅠㅡㅠ 운전경력. 군용차량 다수.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+     ㄴ  그 외 승용차는요...? 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    아 맞다. 차선 반대였지. 깜빡할뻔.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㄴ동거인 차만 얻어탐, 다음. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    오늘 한문철 티비에 역주행하는 경찰차로 나올 준비를 해야겠구나.... (안전벨트 손에 꽉 쥔다.) 
+  </p><p class="player p_c1"><b>서이본</b>
+    농담, 농담~ 문제 없어~ (과연 어떨지)  
+  </p><p class="player p_c3"><b></b>
+    어찌저찌 서이본은 운전대를 잡아버렸습니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    한문철이난리  
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    사고 지점까지 이대로 운전을 해야 할 거예요. 서울의 거리는 워낙 복잡하니 휴대전화의 어플을 사용해서 내비게이션을 검색하는 게 좋겠습니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    화면 위로 지문을 누르고 있는 사이. 배다예는 무전기로 콜사인을 말합니다. <br> 
+  </p><p class="player p_c2"><b>배다예</b>
+    기수 405. 강력팀 본부 응답 바람. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    사고 지점의 초동수사 즉시 이동 예정. 20분 사이로 도착합니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    다예야.....! 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    이거 진짜 감동적입니다... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    지금 저걸 듣고 있을 때가 아닙니다. 눈이 빠져라 지도를 보며 입력하는 걸 마쳤다면 기로를 살펴야죠. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    선배 저희 400... 몇번이었죠? 아 5번~ 하지 않는다니  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    정말로 대단한 장면입니다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    서이본, 항법 판정 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아니잠만 아 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    아!!! 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    그렇지만 다예는 kpc 니까. 어쩔 수 없는거지 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=30  항법 (1D100&lt;=30) 보너스, 패널티 주사위[0] ＞ 62 ＞ 62 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    (배다예 때문에 소름 돋은 탓임.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아까부터 자꾸 어림도 없는 숫자만 나오네요 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    선배, 혹시 네비 볼 줄도 모르는 거 아니죠? (빤...) 
+  </p><p class="player p_c3"><b></b>
+    배다예가 옆에서 지름길을 가르쳐 줍니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    바로 출발한다면 10분 안에 갈 수 있겠어요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    이제 시동을 걸어볼까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    출발해야 할 때입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    기세 좋게 시도해보도록 해요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 판정. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (키 꽂고, 기어 주행모드로 바꾼다. 이제 액셀~) 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 78 ＞ 78 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    (덜컹..) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아. 후진기어네.  
+  </p><p class="player p_c2"><b>배다예</b>
+    (덜컹?) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    ... 선배 그 혹시 몰라서 얘기하는 건데 악셀이랑 브레이크 헷갈리시면 안되는 거 아시죠...  
+  </p><p class="player p_c3"><b></b>
+    원래 원숭이도 나무에 떨어질 때가 있다던가요.  
+  </p><p class="player p_c1"><b>서이본</b>
+    야야, 아직 그건 안 헷갈렸어. 그 정돈 아니다. 
+  </p><p class="player p_c3"><b></b>
+    지금이 바로 그 순간입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    애꿎은 후진 기어를 탓하면서, 다시 출발을 하면...  
+  </p><p class="player continued-line p_c3"><b></b>
+    바퀴가 굴러가고 지하 주차장을 미끄러지듯 빠져나갑니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    출근하는 시간대를 벗어나니 도로는 덜 막히는 것 같습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    주변에서 좀 더 조심히 달리는 기분도 드네요.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    진짜 쉽지 않네요 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    여태 성공이 한번도 안 뜨다니 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    내 인생 티알이 이렇게 험난했던 적이 없는데 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+     
+  </p><p class="player p_c3"><b></b>
+    나란히 운전석과 조수석을 차지한 채로 두 사람은 앞 유리창을 바라봅니다. 도착하기까지는 아직 멀었으니 짧은 대화를 나누기라도 할까요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    끄응... 새로고침 ㄱㄱ 
+  </p><p class="player p_c1"><b>서이본</b>
+    새로고침을햇도다.. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    한국에서 아예 살기로 한 거에요?  
+  </p><p class="player p_c1"><b>서이본</b>
+    직장까지 구했으니까, 아무래도? 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    이러다 또 질리면 돌아갈지도 모르지. 좀 먼 얘기겠지만? 
+  </p><p class="player p_c2"><b>배다예</b>
+    으음... 그래도 뭐 잘 어울리긴 해요 선배.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    옛날에 영국에서도 일진들? (적절한 단어를 떠올리기 어려웠다.) 팼었다면서요. 그것도 일종의 정의실현이니까.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    아니었나~. (기억 가물... 머리 긁적이고는) 퍼스널 컬러랑도 잘 어울리는 것 같고. 아무튼 태백고 사람들도 좋아하겠네. 
+  </p><p class="player p_c1"><b>서이본</b>
+    퍼스널 뭐시기 얘기를 꺼내면 너만 하겠냐. 파란머리, 파란셔츠... 천상 경찰이 따로 없지. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    일진? 아~ 되게 오래된 얘기네. 그런 일도 있었지. (가볍게 듣고 웃어넘기며) 이러나 저러나 군인에서 경찰이라니 비슷비슷하긴 하네. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그러는 너는 배구 하다가 노선 변경한건가? 그렇게 좋아하더니. 할만큼 했어? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    서로 지뢰위에서춤춰요덤덤 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아,아니나는 나는 괜찮을줄알고(ㅋㅋ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    너가 먼저 물어봣잔아 배다예...!! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    할 만큼은 한 것 같은데. 그 기준은 사람마다 다르니까 모르겠어요. 저는 최선을 다한 것 같지만 타인의 입장에서 보면 또 모르겠고.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    뭐어... 무튼 배구 관두고 그냥 체대 입시 준비하고 운 좋게 대학 붙었다가, 또 어쩌다보니 경찰까지 와버렸네요.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    ㅋㅋㅋ 아니 근데 정말 배다예 &lt; 괜찮음 그렇지만 오래된 흉터도후벼파서허브솔트뿌리고트러플오일두르면 아프죠 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    그치만 어지간히 깊게 긁는 거 아니면 걍 그럽갑다 함 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    내가 경찰 됐다고 하니까 예지나도 그렇고, 기희태도 그렇고 전부 구라 치지 말라고 하던데. 네 지능으로 어떻게 시험에 합격했냐고.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    .... 선배, 그 정도에요? 
+  </p><p class="player p_c1"><b>서이본</b>
+    하하! 조금? 걔들이 그럴 정도면 나는 오죽했겠냐.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (한바탕 웃더니 음~ 하고, 운전대에 올린 손 천천히 까딱인다.) 뭐~ 어쨌든, 네가 최선을 다했음 다 한거지. 다른건 생각 안 해봐도 돼. 그게 최선이었다는 걸 알 사람은 너 밖에 없는거고, 그 최선으로 살아갈 사람도 너 밖에 없는거고.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    지금 잘 살면 된 거잖아? 아쉽지만 않았으면 좋겠네.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    어이어이 서이본 너 왜이르케 선배냐고! 
+  </p><p class="player p_c1"><b>서이본</b>
+    얼은이되... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    내가 기억하기론 그때의 넌 열심히 했으니까. 아마 남들 눈에도 그런 모습으로 남아있을거야.  
+  </p><p class="player p_c2"><b>배다예</b>
+    이거... 되게 늦은 진로 상담이라도 하는 것 같아서 기분  이상해요. 예전 선배였으면 수특 푸는데 방해하지 말라고 했으려나? 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+     (음... 슬쩍 웃더니,) 선배도 잘 살고 있는 것 같아서 다행이에요. 내가 옛날에 선배를 썩 좋아하지 않았던 이유가 뭘까 하고 생각해 봤는데, 나랑 비슷해서 그런 거지 않았나 싶더라고.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    마음좋은데안좋아 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    시간이라는 게 참 대단해요, 그쵸. 배구를 하지 못해서 막 죽을 것 같았던 순간도 있고, 식단 조절 하느라 힘들었던 순간도 있었는데 지나고 보면 아무 것도 아닌 것처럼 느껴진다는게. (곰곰...) 그러니까 아까는 장난처럼 얘기했지만, 선배 속에서 영국도 그랬으면 좋겠다고. 나한테 배구같은 존재 아냐?  
+  </p><p class="player p_c1"><b>서이본</b>
+    어우... 그땐 내가 성격이 좀 안 좋긴 했지. 좋아하지 않았을만 해. (‘좀’이 아님.)  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    나나 너나 원하는 걸 못해서 곤두선 상태였으니까, 예민한 사람들끼리는 부딪힐 수 밖에 없기도 하고. 그래도 할 때까지 해보니까 나중에 돌이켜서는 ‘그땐 그랬지~’하기도 하고.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    지금에 와서는, 우린 ‘정체된 상태’가 아니라 ‘그만두지 않은 상태’였으니까 그랬나보다 싶어.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아니진짜어떡해...... 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    그만두지않은상태엿다는거 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    하너무...너무... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    너한텐 배구랑 비슷하려나? 그럴지도. 그땐 나를 증명하기 위한... 뭐, 그쯤. 되게 큰 무언가였는데 이젠 미련도 없는 것 같아.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    이거완전히야르다. 이거완전히고급롤플이다. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    난 할만큼 했거든. 그러니까 너도 언젠간 그럴거야. 어쩌면 이미 그렇게 되고 있을지도 모르고. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    이거완전히야르다. 이거완전히고급롤플이다. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    마음좋아서 기대되는 동시에 두려움 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    그만두지 않은 상태... (단어 몇 번 중얼이다...) 누가 그랬는데 그만 두는 것에도 엄청난 용기가 필요하대요. 새롭게 시작하는 것에 필요한 용기보다도 몇 배는 더. 그러니까 우리는, 아니 적어도 나는 그냥 용기가 좀 없었던 게 아니었나 싶어요.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    그래도 그만두니까 속은 시원했어. 롤러코스터도 타기 전이 무섭지 정작 타고 나면 재밌는 것처럼. 인생이 다 그런 거죠, 뭐.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    뜨아아아아아아아 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    쯔아아아아아아🥺🥺🥺 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    그리고 결국엔 그 시간들이 나한테는 거름으로 남아서, 오늘의 내가 되었으니까...! 여전히 되게 큰 무언가로 남아있는 거죠. 선배한테도 마찬가지일걸.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    예전에는 배구 쳐다도 안 봤는데, 요새는 경기도 보러가고, 옛날 배구부 시절 친구들한테도 연락해요. 좀 마주하고 나니까 내가 정말로 괜찮아졌구나 싶고 뿌듯한 거 있죠. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    너죽나살은 용기가 없는 페어구나, 그니까 여기서 용기가 없다는 건 문자 그대로의 의미가 아니라 좀 더 감동적인, 그 이상의 의미가 있는, 그만두는데에도 용기가 필요하지만 우리는 그만두지 않은 상태였기 때문에, 달리는 것을 멈추지 않았기 때문에 용기가 없다는, (@:아 할머니 알겠어요) 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    선배를 너무 오랜만에 봐서 그런가, 말이 너무 길어졌네...  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아진짜개웃 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    너죽나살은 용기가 없는 페어구나, 그니까 여기서 용기가 없다는 건 문자 그대로의 의미가 아니라 좀 더 감동적인, 그 이상의 의미가 있는, 그만두는데에도 용기가 필요하지만 우리는 그만두지 않은 상태였기 때문에, 달리는 것을 멈추지 않았기 때문에 용기가 없다는, (@:아 할머니 알겠어요) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    서이본 배다예 아직 사건현장 도착도 못 하고 차 안에서 드르륵칵하고 있는거 웃기다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    그래, 생각해보니. 용기가 없긴 했다 우리가. 하긴, 그 학생들이 용기랄게 있었겠냐. 당연한거였을거야.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    속은 시원했다니 다행이네. 난 또 미련 가지고 있을까봐. 학생 때 그걸로 제법 속상해하는 티도 났고.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    10년이면 확실히 뭐가 바뀌긴 바뀌나보다. 평생 안 바뀔 것 같은 사람들도 어느덧 다 바뀌어 있고.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    나도 이젠 영국은 갈 생각 안 든다? 한국엔 가족들도 있고, 친구들도 있으니 심심하지도 않고. 여기가 개인으로 살기에 더 편한 부분도 있고~. 예전이면 이러지 못했을 텐데 말야. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아까는 뭐, 현실감각 없어서 티격태격은 했지만. 오랜만에 보기도 하고, 이젠 다 추억이니까~ 앞으로 출동하면서 이야기 소재 떨어질 걱정은 안 해도 돼서 좋지 뭐. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아니진자초감동사태..... 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player p_c2"><b>배다예</b>
+    그래영국은무슨영국이야  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    천명호랑 배다예 옆집에서 살아 
+  </p><p class="player p_c1"><b>서이본</b>
+    한국에뼈를묻을게그냥 
+  </p><p class="player p_c2"><b>배다예</b>
+    맨날맨날 놀러가게 
+  </p><p class="player p_c1"><b>서이본</b>
+    진짜재밋겟다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    그렇게 밀린 얘기를 하고 있으면, 어느새 도착했을까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    사방에서 웅성거리는 소리가 들립니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    엥? 벌써 도착인가? 
+  </p><p class="player p_c3"><b></b>
+    노란 폴리스라인의 너머에는 다 우그러진 자동차가 보이는군요. 
+  </p><p class="player p_c2"><b>배다예</b>
+    그런 것 같은데요? 저기, 자동차가...! 
+  </p><p class="player p_c3"><b></b>
+    교차로의 거의 절반에 가까운 크기가 막혔으니 도로 두 개의 통행이 막혔는데도, 주변 운전자들에게서 반발이 보이지 않는 이유이기도 할 겁니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    인도에 선 사람들은 저마다 휴대전화로 사진을 찍습니다. 인스타에 올리기라도 한 걸까요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    이야, 심하게 구겨졌네.  
+  </p><p class="player p_c3"><b></b>
+    순경들이 밀어내며 호루라기를 연신 불어대지만 마음처럼 되지 않는 모양입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그들이 노란 테이프를 넘어가지 않는 게 그나마 다행이군요. 이제는 동경에서 벗어나 현실을 걸어봅시다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    매캐한 내음. 요란스러운 현장. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그리고 하얀 장갑을 낀 두 명의 경찰관. 
+  </p><p class="player continued-line p_c3"><b></b>
+    초동 수사를 시작합니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    와씨 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    와... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    가장 먼저 눈에 들어오는 것은 검은색 [사고 차량]일 겁니다. 우그러진 범퍼는 [전봇대]와 맞닿아있군요. [도로]를 지나면 [사진을 찍는 사람]이 있습니다. [주변] 역시 조사할 수 있겠어요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    차부터 좀 볼까? (사고차량 조사한다.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    쯔하하하하하하 브금나올때마다 소금맞은미꾸라지마냥좋아함 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    범퍼가 죄다 우그러진 게 눈에 띕니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    타이어가 용케 붙어있군요. 창문도 남아난 게 없어요. 열쇠가 없더라도 쉽게 손을 집어넣을 수 있을 정도입니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    범퍼 앞을 보아하니 둥근 기둥의 폭만큼 패인 흔적이 있는데요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    들이박으며 터진 에어백이 운전석을 가득 채우고 있군요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그때, 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 관찰 판정. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (응? 뭐가 있나?) 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  관찰력 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 12 ＞ 12 ＞ 대단한 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    드디어 띱...!!<br> 
+  </p><p class="player p_c3"><b></b>
+    오오오오오 드디어!!!  
+  </p><p class="player p_c1"><b>서이본</b>
+    려러분...!! 제가드디어해냈습니다.....!!!!!! 
+  </p><p class="player p_c3"><b></b>
+    아 장하다 이본이 기특해 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    범퍼 밑으로 떨어져 있는 번호판을 발견하게 됩니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    서울1 나 6981. 아무래도 이 차량인 것 같네요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    번호판을 주우며 살펴본 타이어에는 구멍이 나거나 찢어진 흔적은 없습니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    적어도 이 사안에서 타이어 바퀴는 문제가 없었다는 걸 테죠. 다른 원인이 있던 걸까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    차 문을 열어 그 안을 조사해볼 수 있겠습니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    바퀴는 문제가 없네. 급발진이나... 충돌을 피하려다 이래 됐나. (찌그러진 차량의 문 덜거덕대며 열어본다.) 
+  </p><p class="player p_c2"><b>배다예</b>
+    (저걸 여네.) 
+  </p><p class="player p_c3"><b></b>
+    깨진 창문으로 손을 집어넣어 손잡이를 당기면 문이 열립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    에어백이 거슬리는군요. 군데군데 핏물이 묻어있는 걸 봐서는 부상을 입었나 봅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    축늘어진 몸을 겨우 끌어내어 구급차에 실은 흔적이 남아있습니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    실제 현장을 마주하니 속이 메슥거리네요.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아진짜초섹시 (자캐가ㄴㄴ 경찰이ㅇㅇ) 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    SANc (0/1d2)  
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=40  이성 (1D100&lt;=40) 보너스, 패널티 주사위[0] ＞ 61 ＞ 61 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    (쩝... 봐도봐도 익숙해지질 않네.) 
+  </p><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=60  이성 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 68 ＞ 68 ＞ 실패
+  </span></p><p class="player continued-line p_c2"><b>배다예</b><span class="dice-line">
+    1d2 (1D2) ＞ 2
+  </span></p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    1d2 (1D2) ＞ 1
+  </span></p><p class="player p_system"><b>system</b>
+    [ 배다예 ] SAN : 60 → 58 
+  </p><p class="player continued-line p_system"><b>system</b>
+    [ 서이본 ] SAN : 40 → 39 
+  </p><p class="player p_c3"><b></b>
+    인내하고서 시선을 옮겨볼까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    핸들과 페달, 그리고 기어를 살펴보았을 때 별다른 문제는 보이지 않습니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    블랙박스가 있기는 하지만 파손이 큽니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    칩을 빼낸다고 하더라도 복구는 어려울 것 같아요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    바란다면 트렁크와 조수석을 더 살펴볼 수 있겠어요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    경찰이라는 직업 정말 초섹시직업인것같아요 
+  </p><p class="player continued-line p_c3"><b></b>
+    파트너물 형사물 이런거 정말 좋고 취향이고.. 킁... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    이거, 다 구겨져서 알 수 있는게 없네... (조수석 먼저 살펴본다.) 
+  </p><p class="player p_c3"><b></b>
+    동승자가 있었던 건 아닌 걸까요. 유리 조각이 떨어져 있지만 사람이 탄 흔적은 없습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    누군가 있었다면 운전석처럼 핏물이 묻어있어야 할 테니까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    바로 앞에 있는 글로브 박스를 열어보면, 지갑이 들어있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    지갑 속에는 주민등록증과 운전면허증이 있네요. 
+  </p><p class="player p_c2"><b>배다예</b>
+    오, 지갑. (냉큼 꺼내들어 주민등록증 본다.) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    이거 되게 비싼 지갑 같은데.. 막 가죽도 좋아보이고. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (얘가 하니까 왤케 다 범법행위 같아보이지.) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (막 조마조마하고 그르네.) 
+  </p><p class="player p_c3"><b></b>
+    아마도 이건 운전자의 신분증으로 보입니다.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    정신을 잃은 채 실려갔다는 연세 세브란스 병원으로 가기도 전에 이름부터 알게 되었군요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이재원. 만 26세. 서울에 거주하고 있다고 합니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    연세세브란스미치겠다 
+  </p><p class="player p_c2"><b>배다예</b>
+    킁... 여긴 서울이니까. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    (되게 수상한 생각 하는 것 같은데...) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    선배, 이거 봐요. 피해자 신분증이에요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    오키, 피해자 신원 확인했고~ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (다음으로 트렁크 열어본다.) 
+  </p><p class="player p_c3"><b></b>
+    안에 들어있는 건 차량 정비용 물품과 커다란 골프 가방입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    열어보니 아마추어라기엔 값비싼 골프클럽이 들어있는 게 보여요. 그 외로 눈에 띄는 건 없습니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    젊은데 골프 가는 길이셨나? 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    장비가 엄청 값나가보이는데. 
+  </p><p class="player p_c2"><b>배다예</b>
+    아, 이제는 이거 단어 알아요. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    부르주아. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    맞죠? 
+  </p><p class="player p_c1"><b>서이본</b>
+    와, 발전 했구나. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    배다예가 외래어도 쓰고 이거 진짜 감동적이네...... 
+  </p><p class="player p_c2"><b>배다예</b>
+    발전한 게 한 두가지가 아니라고요. (어깨 으쓱...) 
+  </p><p class="player p_c1"><b>서이본</b>
+    그럼 차는 이제 다 본건가? 별다른게 안 보이는데... 전봇대 볼까? 
+  </p><p class="player p_c2"><b>배다예</b>
+    네에~! (전봇대로 총총...) 
+  </p><p class="player p_c3"><b></b>
+    차량이 그대로 들이박은 걸까요. 전선에 겨우 매달려있듯이 기울어진 게 보입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    주변 전기가 싹 내려갔을 테니 직장인들의 공포가 그대로 느껴지는군요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    미처 파일을 저장하지 못했다면······. <br> 
+  </p><p class="player p_c1"><b>서이본</b>
+    와, 전봇대가 기울어있네... 
+  </p><p class="player p_c3"><b></b>
+    괜히 공감할 필요는 없겠죠. 전봇대가 기울어진 방향을 보면 차량이 들이박은 그대로 파손된 듯 합니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    전기에 문제가 생긴 시간을 본부 측에서 전달받는다면 발생 시각을 알 수 있겠군요. <br> 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아진짜현실공포 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    전봇대 위에는 CCTV가 붙어있지만 제 역할을 기대하지 맙시다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    깡통일 가능성이 크니까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    멀쩡히 제 기능을 했다면 초동수사를 올 일도 없었겠죠. 
+  </p><p class="player p_c1"><b>서이본</b>
+    흠... CCTV는 쓸모없을 것 같고. (눈 게슴츠레 뜨고 카메라 째리다가)  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    ㄹㅇ 현실공포 직장인들 어떠함 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    바퀴자국은? (도로 살펴본다.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    참고. 씨씨티비는정말로소용이가없다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    아스팔트가 깔린 도로 위를 살펴봅니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    하얀 선과 검은 바탕.  
+  </p><p class="player continued-line p_c3"><b></b>
+    어딘가에서 나는 매연의 내음. 도시의 길. 여기에서 별다른 걸 발견할 수 있을까요.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    전원, 관찰 판정. 
+  </p><p class="player p_c1"><b>서이본</b>
+     
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  관찰력 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 71 ＞ 71 ＞ 실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    쩝 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=60  관찰력 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 49 ＞ 49 ＞ 보통 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    다예야 믿고있었다고~! 
+  </p><p class="player p_c2"><b>배다예</b>
+    킁 관찰은 해야지 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    그 때, 배다예의 눈에 오른쪽 길에서 위쪽 길로 급하게 커브를 튼 흔적이 들어옵니다.  
+  </p><p class="player p_c2"><b>배다예</b>
+    어어? (허리 쭈그려 바닥 가만 살피더니....) 선배, 이것 좀 봐요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    뭔가 발견? (쪼르르...) 
+  </p><p class="player p_c2"><b>배다예</b>
+    다급하게 커브를 틀었어요. 무언가 있었다는 소리인데...  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    급발진 같은 사고는 아무래도 아닌 것 같죠. 최소한 도로에 고라니라도.... 튀어나왔다든가. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    (고라니....) 
+  </p><p class="player p_c1"><b>서이본</b>
+    뭘 피하다가 이렇게 된 게 맞나보네.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (서울 한복판에 고라니...) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    음, 아무튼... 뭐든 목격한 사람 있으려나. (사진을 찍는 사람들 둘러본다.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    저잠만 장실을.. 다녀오다 2분만요! 
+  </p><p class="player p_c1"><b>서이본</b>
+    네!!! 
+  </p><p class="player p_c2"><b>배다예</b>
+    냥  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    왔어요 
+  </p><p class="player p_c1"><b>서이본</b>
+    냐냐냥!!! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    어쩌면 목격자가 있을지도 모릅니다. 대화를 나누어볼까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    [교복을 입은 소년], [운동복을 입은 남성], [구두를 신은 여성]이 눈에 들어옵니다. 그들은 각각 휴대전화를 든 채 현장을 촬영하고 있습니다.<br> 
+  </p><p class="player p_c1"><b>서이본</b>
+    (우선 어른한테 먼저 묻는게 도리지...)(구두를 신은 여성에게 먼저 다가간다.) 실례합니다~ 경찰입니다. 혹시 사고상황 목격하셨을까요?  
+  </p><p class="player p_c6"><b>구두를 신은 여성</b>
+    어머, 네!! 여기에서 실려 간 사람, 많이 다친 것 같던데요. 어쩌면 좋아... 보니까 젊은 것 같던데.  
+  </p><p class="player continued-line p_c6"><b>구두를 신은 여성</b>
+    뭐 찾으신 건 없나요? 젊은 사람이 불쌍하기도 하지.... 
+  </p><p class="player p_c3"><b></b>
+    전원, 지능 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70 지능 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 39 ＞ 39 ＞ 보통 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    이것도 실패했으면 울었다 진짜 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=50  지능(아이디어) (1D100&lt;=50) 보너스, 패널티 주사위[0] ＞ 2 ＞ 2 ＞ 대단한 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    와 미친 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    배다예 뭐냐 
+  </p><p class="player p_c2"><b>배다예</b>
+    뭐.. 지? 이거캐붕인데 
+  </p><p class="player p_c1"><b>서이본</b>
+    다예가 해냄..!!!!!!!!!!!!!!! 
+  </p><p class="player p_c2"><b>배다예</b>
+    지능 40 찍으려다가 오바같아서 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    50 했는데 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    신기하네요 
+  </p><p class="player p_c1"><b>서이본</b>
+    아진짜개웃 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    단순 사고로 여기기엔 묘한 발언이지 않나요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어쩐지 의미심장한 구석이 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    추궁하자 여성은 머뭇거리며 말합니다. 
+  </p><p class="player p_c6"><b>구두를 신은 여성</b>
+    사실, 지나가다가 들었거든요.... 
+  </p><p class="player continued-line p_c6"><b>구두를 신은 여성</b>
+    멈춰!라고 외쳤던 소리를.  
+  </p><p class="player continued-line p_c6"><b>구두를 신은 여성</b>
+    브레이크가 고장 났던 걸까요? 
+  </p><p class="player p_c1"><b>서이본</b>
+    브레이크 고장? (일단 수첩에 메모해두고...)  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그럼 이외에 다른건 없으신가요?  
+  </p><p class="player p_c6"><b>구두를 신은 여성</b>
+    네, 그것 말고는 딱히 없네요. 많이 다친 건 아니어야 할텐데~  
+  </p><p class="player p_c3"><b></b>
+    말을 마친 여성은 회사에 늦겠다며 다급히 뛰어갑니다.  
+  </p><p class="player p_c1"><b>서이본</b>
+    그럼 이번에는... (운동복을 입은 남성에게도 말을 건다.) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    사고 당시 상황 목격하신 부분 있으실까요! 
+  </p><p class="player p_c7"><b>운동복을 입은 남성</b>
+    아, 목격한 거 말씀이십니까. 글쎄요...  
+  </p><p class="player continued-line p_c7"><b>운동복을 입은 남성</b>
+    전 그냥 러닝 뛰다가 들린 거라서요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    쿳쏘! 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    여긴꽝인가 ww 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c7"><b>운동복을 입은 남성</b>
+    근처에 산책로가 있으니까, 가끔 러닝 장소로 씁니다.  
+  </p><p class="player p_c2"><b>배다예</b>
+    그러면 운동하다 구경 왔다... 는 말씀이실까요? (약간 황당해졌다....) 
+  </p><p class="player p_c1"><b>서이본</b>
+    (한국인 평균 제법 기희태.) 
+  </p><p class="player p_c7"><b>운동복을 입은 남성</b>
+    엇, 네네! 저길 보세요. 하하, 외제차가 저렇게 된 걸 볼 일이 또 어디 있을까 싶어서요.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아진짜 골떄리는 인간이네 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    개웃기게 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c7"><b>운동복을 입은 남성</b>
+    저런 외제차는 그냥 보는 것도 힘든데, 완전 찌그러졌지 않습니까.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    럭키기희태 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    (한국인 평균 엄청 기희태.) 
+  </p><p class="player p_c3"><b></b>
+    자동차 주변을 다시 살피면 엠블럼이 떨어져 있는 것을 발견할 수 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    차량이 파손될 때 떨어졌던 걸까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    독일제 B사의 것으로 상당히 비싼 차라는 걸 알아차립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    적어도 서민이 타기엔 무리가 있어요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    다 부서진 이후로는 알아보지도 못했지만. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (트렁크의 물건들도 그렇고 꽤 사는 사람이었나 보군...) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    저 이거 첨에 
+  </p><p class="player continued-line p_c3"><b></b>
+    bmw나 벤츠인줄 알고 
+  </p><p class="player continued-line p_c3"><b></b>
+    몰아줬던 지엠 누나한테 아니 그정돈가...? 했었는데 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    그럼 별다른 특이점은 없으신걸까요? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    지엠누나: 벤틀리 아냐? 
+  </p><p class="player p_c1"><b>서이본</b>
+    와 
+  </p><p class="player p_c3"><b></b>
+    해서 납득했던기억이... 
+  </p><p class="player p_c1"><b>서이본</b>
+    저도 bmw 떠올려서 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ㄹㅇ 길거리에 널린게 bmw엿어서 체감 못하고 잇엇는데 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    이럼 말이 달르지. 
+  </p><p class="player p_c3"><b></b>
+    폭싹무너진벤틀리 
+  </p><p class="player continued-line p_c3"><b></b>
+    마음이아프다... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c7"><b>운동복을 입은 남성</b>
+    네, 전 그냥 운동 가다가 들린 거라서요, 하하! 그럼 이만 수고하십쇼! 
+  </p><p class="player p_c1"><b>서이본</b>
+    협조 감사합니다! 살펴가십쇼~ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    음.. (교복 입은 애 봄) 저쪽은 사고 상황을 봤어도 문제 아닌가. (머리 긁적...) 
+  </p><p class="player p_c2"><b>배다예</b>
+    저거 비싼 차구나~ 몰랐는데. 말 듣고 보니까 비싼 티가 나는 것 같기도 하고요.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    어쩐지 에어백이 잘 터졌더라.  
+  </p><p class="player p_c1"><b>서이본</b>
+    에어백은 원래 잘 터져야 되는거 아닌가? 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    안 터트려봐서 모르겠다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    나중에 태주 선배 차로 한 번 실험해봐요. 나도 궁금하다.  
+  </p><p class="player p_c1"><b>서이본</b>
+    안돼 걔 눈 뒤집어진다. 이미 차 하나 사고 내고 폐차시켰어. 
+  </p><p class="player p_c2"><b>배다예</b>
+    응....? 그게 무슨 말이에요. 선배가? 아니면 태주선배가? 아니면 고라니라도 쳤나? 
+  </p><p class="player p_c1"><b>서이본</b>
+    말 하자면 긴데 아무튼 운전자는 걔였어. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    걔 차 끌고 나가서 네 차 에어백 잘 터지더라 하면 볼만하긴 할듯. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아진짜웃기게 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    남의차에어백ntr 이냐고요 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    ..... 나중에 일찍 죽고 싶어지면 참고할게요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아 대사가 ntr대사였어ㅅㅂ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    대화를 마치고 교복을 입은 소년에게 다가서자 소년은 미간을 찡그립니다. 
+  </p><p class="player p_c8"><b>교복을 입은 소년</b>
+    왜요. 뭐 땜에요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    아 나는 노린줄알았는데 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    (요즘 애들 어렵다.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    아니었다고? 
+  </p><p class="player continued-line p_c3"><b></b>
+    아진짜더웃기다..... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    (그러게요. 나도 이 정도 폐급은 아니었던 것 같은데.) 
+  </p><p class="player p_c1"><b>서이본</b>
+    혹시 사고 상황 목격하셨을까요? 그 외 아는 점 있으시다면 뭐라도 좋고.  
+  </p><p class="player p_c8"><b>교복을 입은 소년</b>
+    몰라요? 내가 어떻게 알아...  
+  </p><p class="player continued-line p_c8"><b>교복을 입은 소년</b>
+    그냥 시끄럽길래 한 번 와본 거에요.  
+  </p><p class="player continued-line p_c8"><b>교복을 입은 소년</b>
+    진짜 귀찮게. 
+  </p><p class="player p_c3"><b></b>
+    소년은 짜증을 내더니 휙 돌아서 가버립니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    요즘 애들은 정말 어렵네요... 
+  </p><p class="player p_c1"><b>서이본</b>
+    태백고 휴동 재평가 시급하다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    앚잠만죄송해요 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    동생이 제 스타벅스텀블러를 학교에 몰래 가져갔는데 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    떨궈서 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    깨트렸다고 
+  </p><p class="player p_c1"><b>서이본</b>
+    z 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    핰ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player p_c2"><b>배다예</b>
+    아샹 진짜 내 텀블러!!!!!!!!!! 
+  </p><p class="player p_c1"><b>서이본</b>
+    아진짜웃기다 
+  </p><p class="player p_c2"><b>배다예</b>
+    아진짜어쩐지 오늘 오하아사 12위더라.... 
+  </p><p class="player p_c1"><b>서이본</b>
+    갓다오새요 아진자웃김 
+  </p><p class="player p_c2"><b>배다예</b>
+    아뇨아뇨 잡들이했어요 
+  </p><p class="player p_c1"><b>서이본</b>
+    개웃 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    그러니까 선배 나한테 잘해요. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    나 정도면 괜찮다니까? 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    어쨌든 대화 중에 저렇게 휙 가 버리진 않잖아요... 싸가지....(중얼) 
+  </p><p class="player p_c1"><b>서이본</b>
+    그래... 너 진짜 착한 애였구나. (추억보정 미화됨)  
+  </p><p class="player p_c2"><b>배다예</b>
+    그래요, 나름 이렇게 경찰도 됐다고. 그러면 살펴볼 건... (주변 둘러본다.) 
+  </p><p class="player p_c1"><b>서이본</b>
+    (어깨 빙 돌리며 따라서 같이 주변도 빙 둘러본다.) 
+  </p><p class="player p_c3"><b></b>
+    고개를 틀어 주변을 살펴봅니다. 이곳은 고속도로로 나가는 도로 인근입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    출근이 거의 끝난 시간에는 유난히 한적하죠. 
+  </p><p class="player continued-line p_c3"><b></b>
+    차량이 많이 다니지도 않으니 설치된 CCTV도 가짜. 
+  </p><p class="player continued-line p_c3"><b></b>
+    속도를 올린다고 한들 아무도 뭐라고 하는 사람이 없는 곳입니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    하루아침에 분위기가 생기지 않으니 오래전부터 그래왔다는 걸까요.  
+  </p><p class="player p_c2"><b>배다예</b>
+    이제 다 살핀 것 같죠. 뭔가 이상한데.... (곰곰) 
+  </p><p class="player p_c1"><b>서이본</b>
+    아~ 뭐가 없네. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    살펴볼 건 다 살펴봤는데.  
+  </p><p class="player p_c2"><b>배다예</b>
+    수사한 걸 정리해보면... 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    오타쿠의 감, 단순 브레이크 고장 아니고 용의자 나올거임(아닐시:유감) 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    멈추라고 외쳤던 소리. 급커브한 바퀴 자국. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    맞죠맞죠 이게정답이죠 킁... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    브레이크 고장 같은 건 아니었으니까 제 3자가 있었다는 소리인데. 그렇다면 선배.... 
+  </p><p class="player p_c1"><b>서이본</b>
+    멈추지 못했고, 뭔갈 피하기는 해야 했고. (수첩 달랑달랑 흔들다가,) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그냥 사고는 아니겠지. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    근데 CCTV는 없고, 미치겠네 이거. 
+  </p><p class="player p_c2"><b>배다예</b>
+    네. 따지자면 사고가 아니라 사건이에요.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    선배 말대로 증거는 턱없이 부족하고....  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    나그냥다예가내가키운딸같고너무장하다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    배다예는 난처하다는 듯 미간을 찌푸리더니 말합니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    내딸이언제이렇게컸을꼬 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    미처 치지 못한 폴리스 라인의 밖. 
+  </p><p class="player continued-line p_c3"><b></b>
+     사람들이 돌아다니느라 지워지고 있는 바퀴 자국. 
+  </p><p class="player continued-line p_c3"><b></b>
+    소거되는 도로 위의 물증을 바라보면서요.<br> 
+  </p><p class="player p_c2"><b>배다예</b>
+    물증이 있었다는 걸 아는 경찰은 선배랑 나. 둘 뿐이에요.  
+  </p><p class="player p_c3"><b></b>
+    발자국 사이로 물증은 사라져갑니다. 저게 인정받을 가능성은 극도로 낮아요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    wwwwww이거지 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    두 사람의 책임은 아닙니다. 순경이 더 넓은 폭으로 노란 테이프를 두르지 않았을 뿐이니까. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그저, 그저 아쉬운 일로 흘러갈 수 있습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    경찰, 특히 두 사람이 몸 담고 있는 강력팀에게 쏟아지는 건 사건입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    활약하는 상황은 언제라도 있을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    앞으로 두 사람은 많은 일을 겪게 될 테니까······.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그럼에도 만일, 물러나고 싶지 않다면 아직 기회가 있습니다.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    결정해서 움직일 수 있는 시간은 바로 오늘. 
+  </p><p class="player continued-line p_c3"><b></b>
+    스물네시간의 골든타임에서 벗어나지 않으며 이 사안에 배정되어있는 데다, 순찰차 열쇠를 주머니에 넣은 단 하루뿐입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본. 당신의 파트너에게 무엇을 말하겠습니까? 
+  </p><p class="player p_c1"><b>서이본</b>
+    (흠... 생각하는 시간은 그리 길지 않다. 그간 생각은 많이 해왔으니까. 이제는 경험으로 움직일 나이, 스물아홉이다.) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    다예야, 첫 단추가 중요하다는거 알지. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    우리 이거 해결하고 간다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아잠만 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    ㄴ너무멋있어... 
+  </p><p class="player p_c1"><b>서이본</b>
+    이런다 
+  </p><p class="player p_c2"><b>배다예</b>
+    아니이본이진짜너무경찰인데? 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    너무좋은데... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    선배라면 그렇게 말할 거라고 생각했어요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    일렉보더이거진짜좋은시날이네요정말좋습니다아 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    진짜파트너같다우리 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    (어렸던 열아홉과 열여덟. 그리고 10년이 지난 지금.) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    (이제 우리는 첫 도전과 책임에 대한 용기 정도는 내볼 수 있는 어른이니까.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    헉. 허억, 쓰허억. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    헉... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    그러면 선배, 병원으로 가죠. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    피해자가 증언할 수 있는 상황인지 확인은 해야죠. 운전석 시트가 저 꼴이긴 해도. 우리는 1%의 가능성이 있다면 그 확률에 최선을 다해야 하니까. 
+  </p><p class="player p_c1"><b>서이본</b>
+    확실히, 현장보다는 그쪽 단서가 더 많겠다. 의식이 있으면 다행일텐데.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    뭐, 어느쪽이든 끝까지 수사할테니 이제 지름길이냐 먼길이냐의 차이일 뿐이지만. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    가볼까. 
+  </p><p class="player p_c3"><b></b>
+    내일이면 다른 사건을 수사해야 합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    한 가지 일에만 붙어있을 수는 없어요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    스물네시간 안에 사고로 마무리가 되어버릴 일.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    시러시러 이거 해결할거임 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    어디로도 확률은 0%에 가깝지만 완전한 제로는 아닐 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    두 사람이 여기에 있으니까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    곁에서 고개를 끄덕이는 배다예를 보지 않았습니까. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이렇게 서 있으니 진짜 파트너가 된 기분일지도 모릅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아직은 까마득하기만 한 길입니다. 어쩌면 헛수고로 끝나버릴지도 몰라요. 이걸 후회하게 될까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그럼에도 행동하지 않음으로써 겪는 후회만큼은 겪지 않았습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    부끄러운 자책을 얻지 않았습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    당신이 틀리지 않았다는 것을 증명하러 갈까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    사실, 어디든 폴리스 라인의 안이 될 수 있지 않습니까. 
+  </p><p class="player continued-line p_c3"><b></b>
+    노란 테이프가 없더라도. 
+  </p><p class="player continued-line p_c3"><b></b>
+    파트너와 당신이 있다면. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    앙앙앙앙 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    Chapter 2. POLICE LINE! 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    개좋으네................ 
+  </p><p class="player p_c3"><b></b>
+    킁... 혹시  
+  </p><p class="player continued-line p_c3"><b></b>
+    밥먹는시간 겸 쉬는시간 
+  </p><p class="player continued-line p_c3"><b></b>
+    필요하실지 여쭙습니다 
+  </p><p class="player p_c1"><b>서이본</b>
+    저는 아직 ㄱㅊ은데 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    린님 필요하시면 쉬어가도 댐 
+  </p><p class="player p_c3"><b></b>
+    킁... 좀 이따 쉬어가기가 뭐할 것 같아서 
+  </p><p class="player continued-line p_c3"><b></b>
+    (시나리오 내용적으로...) 
+  </p><p class="player p_c1"><b>서이본</b>
+    아. 
+  </p><p class="player p_c3"><b></b>
+    여기서 한번 쉬엇다 가까효  
+  </p><p class="player p_c1"><b>서이본</b>
+    쪼아요!! 
+  </p><p class="player p_c3"><b></b>
+    네에 그러면....! 7시 40분에 봅시다 사실 더 늦어져도 ㄱㅊ 
+  </p><p class="player p_c1"><b>서이본</b>
+    녜!! 
+  </p><p class="player p_c3"><b></b>
+    네에// 
+  </p><p class="player continued-line p_c3"><b></b><span class="dice-line">
+    choice[마라탕, 햄버거, 치킨] (choice[마라탕,햄버거,치킨]) ＞ 마라탕
+  </span></p><p class="player continued-line p_c3"><b></b>
+    킁... 이따 마라탕 시켜먹어야겠네요 
+  </p><p class="player p_c1"><b>서이본</b>
+    웃기다 혼자 주사위굴리고 계셧네; 
+  </p><p class="player p_c3"><b></b><span class="dice-line">
+    choice[서이본은 깜고다, 서이본은 아기돼지다] (choice[서이본은 깜고다,서이본은 아기돼지다]) ＞ 서이본은 깜고다
+  </span></p><p class="player p_c1"><b>서이본</b>
+    미쳤나 
+  </p><p class="player p_c3"><b></b>
+    어떡해 주사위의 신이  
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본이 깜고라고하네요... 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    choice[배다예는 아기강아다, 배다예는 아기돼지다] (choice[배다예는 아기강아다,배다예는 아기돼지다]) ＞ 배다예는 아기강아다
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    이건 맞는말이지... 
+  </p><p class="player p_c3"><b></b>
+    아 이상한데?  
+  </p><p class="player continued-line p_c3"><b></b>
+    이상하네요... 
+  </p><p class="player continued-line p_c3"><b></b>
+    시스템이 이상하네 
+  </p><p class="player p_c1"><b>서이본</b>
+    돌았나 
+  </p><p class="player p_c3"><b></b>
+    킁 아무튼 가볼까요 냐냥 
+  </p><p class="player p_c1"><b>서이본</b>
+    네ㅠㅠ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    브금봐미친ㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    순찰차에 도로 올라탑니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    현장을 방문했음에도 깔끔하게 떨어지지 않는 결론. 
+  </p><p class="player continued-line p_c3"><b></b>
+    오히려 발이 잠기는 듯한 기분을 느꼈을까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    발치에 감겨드는 게 있다면 털어버려야 해요. 차라리 그 시간에 액셀을 밟는 게 더 이롭습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    괜한 생각에 잠겨 들기보다 목적지를 내비게이션에 입력해보는 게 좋겠군요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    목적지는 연세 세브란스 병원. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    세브란스 병원으로 고고~!~! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    경로를 동시에 확인해볼까요. 운전대를 잡았으니 어디 한 번 살펴봅시다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    기왕이면 가장 빠르게 도착하는 게 좋을 테니까. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 항법 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=30  항법 (1D100&lt;=30) 보너스, 패널티 주사위[0] ＞ 47 ＞ 47 ＞ 실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㅋㅋ어림도없지 
+  </p><p class="player p_c3"><b></b>
+    킁 근데 까비다  
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    지름길을 찾는 건 어려웠으나 큰 길로 들어가도 문제는 없겠습니다. 5분 정도 차이는 있겠지만. 
+  </p><p class="player continued-line p_c3"><b></b>
+    바퀴가 몇 번을 굴러갔을지. 몇 대의 차를 추월하였으며 몇 대의 차에 길을 내어주었을지. 그런 걸 가늠하고 있노라면 어느새 도착합니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    연세 세브란스 병원. 
+  </p><p class="player continued-line p_c3"><b></b>
+    주변을 둘러보면 휠체어를 탄 환자들과 간병인이 드문드문 보입니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    그들을 붙잡기보다 접수를 맡은 간호사를 찾아가는 게 좋겠어요.  
+  </p><p class="player p_c1"><b>서이본</b>
+    (접수대로 곧장 향한다.) 경찰입니다. 교통사고로 입원하신 분 찾고 있는데요. 중상으로 실려오셨을겁니다. 
+  </p><p class="player p_c9"><b>간호사</b>
+    경찰이라고요? (의심의 눈초리...) 
+  </p><p class="player continued-line p_c9"><b>간호사</b>
+    죄송하지만 경찰 신분증 있으세요?  
+  </p><p class="player p_c1"><b>서이본</b>
+    (품에 넣어놨던 경찰 수첩 꺼내 보여준다.) 예, 물론.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    앙앙앙앙 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c9"><b>간호사</b>
+    (대충 고개 끄덕인다.) 요새 이상한 사람들이 너무 많아서요. 아마... 이재원 환자 말씀하시는 것 같은데, VIP 병동에 있을거에요. 
+  </p><p class="player continued-line p_c9"><b>간호사</b>
+    잠시만요.... (키보드 몇 번 두들기더니) 
+  </p><p class="player continued-line p_c9"><b>간호사</b>
+    아, 1402호에 계시네요. 
+  </p><p class="player p_c2"><b>배다예</b>
+    수사에 협조해주셔서 감사합니다~! 수고하세요!  
+  </p><p class="player p_c1"><b>서이본</b>
+    협조 감사합니다! 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    VIP 병동? (긁적) 
+  </p><p class="player p_c2"><b>배다예</b>
+    돈이 얼마나 많은 거야...  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    1402호면.... 14층으로 가면 되겠네요. 엘리베이터 타고 가죠.  
+  </p><p class="player p_c1"><b>서이본</b>
+    좋지. (엘리베이터 찾아 탑승하러 간다..) 
+  </p><p class="player p_c3"><b></b>
+    엘리베이터를 타고 올라갑니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    띵. 소리와 함께 14층에 들어서면, 환자 침대를 가로로 밀어도 될 정도로 넓은 복도. 어쩐지 쓸데없을 만큼 현대적인 인테리어. 그 흔한 CCTV조차 없이 말끔한 내부. 
+  </p><p class="player continued-line p_c3"><b></b>
+    두 번째 병실에 멈춰 서면 1402호입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이재원이라는 이름의 환자명이 붙어있군요. 안에 들어갈 수 있습니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (병실에 예의차 몇번 노크 두들긴 뒤 들어간다.) 실례합니다~ 
+  </p><p class="player p_c3"><b></b>
+    들어오라는 목소리가 울립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    문을 열고 들어가면 사과를 깎던 남성과 눈이 마주칩니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    조사 나왔습니다. 사고 피해자분 계신가요? 
+  </p><p class="player p_c3"><b></b>
+    조용한 병실.  
+  </p><p class="player continued-line p_c3"><b></b>
+    얼굴에 거즈가 붙어있는 환자는 곤히 잠들어있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    사과를 깎던 남성은 고개를 숙여 인사합니다.  
+  </p><p class="player p_c10"><b>이재원의 경호원</b>
+    도련님의 지인.... (경찰복 위아래로 훑고는,) 아 경찰분들이시군요.  
+  </p><p class="player p_c1"><b>서이본</b>
+    (우와, 도련님이래.) 
+  </p><p class="player p_c10"><b>이재원의 경호원</b>
+    도련님께서 사고 이후의 충격이 크니 자극하지 말아주시죠.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    나 궁핍한데 커미션 넣게 도련님이 이거나 먹고 떨어지라며 현금다발로 싸대기 때려줫으면... 
+  </p><p class="player p_c10"><b>이재원의 경호원</b>
+    ㅋ 
+  </p><p class="player continued-line p_c10"><b>이재원의 경호원</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c10"><b>이재원의 경호원</b>
+    아진짜개웃... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    네네. 조용히 이야기 나누죠. 피해자분 직접 증언은 어려운 상황이신가요? 
+  </p><p class="player p_c10"><b>이재원의 경호원</b>
+    딱 봐도 보이지 않습니까? 아뇨, 조용히 해도 지금은 무리니까, 나가주시죠. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    이싸가지 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c10"><b>이재원의 경호원</b>
+    조사는 나중에 서로 갈테니까요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (그렇다는데.)(배다예 봄) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    싸가지가요즘애들과동급 
+  </p><p class="player p_c10"><b>이재원의 경호원</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    (....) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    (본인이 뭐 재벌이라도 되는 줄 아나....) 
+  </p><p class="player p_c1"><b>서이본</b>
+    (진정해..) 
+  </p><p class="player p_c2"><b>배다예</b>
+    그러면 다시 오겠습니다. 피해자 분 상태가 호전되면요. 
+  </p><p class="player p_c10"><b>이재원의 경호원</b>
+    하아.... (한숨 푹 쉰다.) 네, 그러니까 일단은 나가주세요. 
+  </p><p class="player p_c3"><b></b>
+    병실에서 내쫓기듯 나와버리고 맙니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    시작했던 다짐이 흐려지는 기분이 들었을까요. 협조하지 않는 게 답답했을까요. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    세상에는 이런 식으로 사장되어버린 사건이 얼마나 존재할까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    생각처럼 되는 일이 없습니다. 입 안의 살을 질겅이다가 보면 누군가의 목소리가 들립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    "저기요" 
+  </p><p class="player continued-line p_c3"><b></b>
+    고개를 돌려보면 뺨에 생채기가 난 여자가 있습니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    오오오오 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    환자복을 입은 채로도 마스카라를 칠한 게 인상적이네요. 한 손으로 목발을 움켜쥔 사람은 말합니다. 
+  </p><p class="player p_c11"><b>뺨에 생채기 난 여자</b>
+    밖에서 들었어요. 그러니까, 이 미친 짓거리. 평범한 사고는 아니라고 생각하시는 것 같던데. 맞아요? 
+  </p><p class="player p_c1"><b>서이본</b>
+    (잠깐 눈 굴리다가) 아, 네. 뭐... 여러모로 큰 사고였기도 하고요. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    혹시 사고 관계자분? 
+  </p><p class="player p_c11"><b>뺨에 생채기 난 여자</b>
+    .... 따라와요. 복도에서 얘기할 수는 없으니까. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (와, 드디어.) 
+  </p><p class="player p_c3"><b></b>
+    절뚝거리며 앞장서는 걸음을 뒤따라가야겠죠. 
+  </p><p class="player continued-line p_c3"><b></b>
+    지금 당장은 다른 수가 없으니까요. 배다예도 같은 생각이었는지 발걸음을 옮깁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    정확히 네 개의 병실을 더 지나친 1406호에 도착했을 때. 여자는 목발을 쥐지 않은 손으로 미닫이문을 열었습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    오렌지색의 소파와 벽걸이 TV.  
+  </p><p class="player continued-line p_c3"><b></b>
+    테이블과 양쪽으로 여는 냉장고.  
+  </p><p class="player continued-line p_c3"><b></b>
+    좀 전에 이재원의 병실에 갔을 때는 눈에 들어오지 않던 VIP 병실의 내부를 마주합니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    여자는 소파 위로 주저앉으며 맞은편에 앉으라는 듯 자리를 권합니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    와 병실 좋아보인다? 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    원룸 뺨치네? 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c11"><b>뺨에 생채기 난 여자</b>
+    난 정채은이라고 해요.  
+  </p><p class="player p_c3"><b></b>
+    정채은은 덜덜 떨리는 입술을 엄지로 눌렀습니다. 두려움을 어떻게든 참고 싶다는 것처럼. 아예 손톱을 물어뜯는 줄도 모르나 봅니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    수치심이 어린 얼굴로 정채은은 말합니다. 
+  </p><p class="player p_c12"><b>정채은</b>
+    청우 제과를 알아요? 우리 집 거에요.  
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    전문 경영인도 두지 않은 채 굴리고 있죠. 재원이도 비슷해요. 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    걔도 골프선수라고는 하지만 아버지가 더 유명하고. 
+  </p><p class="player p_c3"><b></b>
+    청우제과. 안에 초콜릿을 끼워 넣은 비스킷이라거나, 치즈 분말을 끼얹은 옥수수 과자로도 유명하죠.  
+  </p><p class="player continued-line p_c3"><b></b>
+    이재원에 대해서도 스포츠에 관심이 있다면 떠올릴 수 있습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그 말을 듣다 보면 배다예가 반문하듯이 되묻습니다.  
+  </p><p class="player p_c2"><b>배다예</b>
+    (엥...) 아버지가? 
+  </p><p class="player p_c3"><b></b>
+    정채은은 고개를 끄덕이고서 말합니다.  
+  </p><p class="player p_c12"><b>정채은</b>
+    이번 총선에서 서울 시장으로 출마하시게 될 분이시거든요. 이준현. 
+  </p><p class="player p_c3"><b></b>
+    들어본 적 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    뉴스에서 떠들어대던 유력 후보. 
+  </p><p class="player p_c1"><b>서이본</b>
+    아. (너무 큰 사건 아닌가 이거.) 
+  </p><p class="player p_c12"><b>정채은</b>
+    우리만큼이나 아버지들이 친하세요. 그래서, 별 소란이 일어나도 덮어주겠다는 거죠. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (배다예 봄)(이거 우리가 맡는게 맞냐?) 
+  </p><p class="player p_c12"><b>정채은</b>
+    자식들이 똑같은 짓을 당해서 이모양 이꼴인데. 
+  </p><p class="player p_c2"><b>배다예</b>
+    (... 일단은 선배, 계속 들어보죠.) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    (일단은 우리 소관이니까.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    킁... 물어보고 싶으신거 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    물어보시면됩니다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    그럼 피해자분과의 관계는... 친구분이신거고요. 
+  </p><p class="player p_c12"><b>정채은</b>
+    말했잖아요. 이미 얘기한 것처럼 아버지들끼리 친하고.  
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    그 이전에는 우리끼리 친한 것부터 시작했어요. 같은 학교를 나왔거든요. 그사이 좋던 그룹이 죄다 이 모양이니······. 아, 그래도 재원이는 살만 찢어졌다면서요. 재수도 좋아. 
+  </p><p class="player p_c2"><b>배다예</b>
+    같은 학교 말이십니까? (갸웃) 
+  </p><p class="player p_c1"><b>서이본</b>
+    (아, 잠만. 나 뭔가 감 옴.) 
+  </p><p class="player p_c12"><b>정채은</b>
+    네. 송도국제고등학교요. 알잖아요.  
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    돈 많은 사람들이나 간다는 곳이요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (내 생각엔···) 외람될 수는 있습니다만, 정채은 씨는 어쩌다 입원하게 되신겁니까? 사고차량 동승자는 없었던 것으로 파악했거든요. (···이쪽도 비슷하게 입원했을 것 같은데.) 
+  </p><p class="player p_c12"><b>정채은</b>
+    아- 그건 말이죠. 3달 전이었어요. 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    서울을 벗어나서 부산으로 여행을 갈 생각이었어요. 별장에서 지낼 생각으로 인스타에 샴페인 사진도 올렸고. 기분 좋았죠. 지금 생각하면 웃기네. 이렇게 될 줄도 모르고······.  
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    차가 미친 듯이 쫓아왔어요. 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    금방이라도 도로에서 밀어버릴 것처럼. <br> 
+  </p><p class="player p_c1"><b>서이본</b>
+    아하. (역시. 사고로 위장된 계획범죄구나.)  
+  </p><p class="player p_c12"><b>정채은</b>
+    이를 악물고 피해 봐도 다시 따라오고······. 도망치다가 어디로든 들이박은 거예요. 기분 탓 아니냐는 말이라면 꺼내지도 마요. 다 같은 걸 겪었으니까. 망할. 차종이나 색깔도 기억 안 나요. 도망치느라 뒤를 볼 겨를도 없었어.  
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    우리는 사냥을 당한 거예요. 과속이 아니야. 아니라고요. 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    그 덕분에 발목이 완전히 으스러졌어요. 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    원래 하던 한국 무용은 할 수도 없게 되었고요. 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    걸을 수는 있긴 하겠지만. 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    그럴듯하고 고풍스러운 교양이나 갖고 살라고 해서 했던 일이지만... 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    그래도 어떤 새끼가 감히.... 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    냥... 슬슬 진상 감이 오시나요 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    참고로 저는 여기까지 와서도 헛다리만 존나 짚음 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    이해했습니다. (처음 봤을 때부터 보이던 불안행동징후, 그외 무언가를 암시하는 뉘앙스의 어투 다수. 종합적으로 보자면,) 그러니까, 연쇄적인 사건이라는 거죠.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    목숨을 노렸다고 보십니까, 아니면 사고 자체가 목적이었다고 보십니까? 사망자가 나오지 않았으니까, 이 부분이 고의적으로 살려둔건지 파악하고 싶네요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    개웃 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c12"><b>정채은</b>
+    네, 맞아요. 저랑 재원이 다른 애들까지도 죄다 당했으니까.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    같은 학교 나온 애들 다 어우 나왔네 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c12"><b>정채은</b>
+    한 명은 팔을 못 쓰게 되었고, 한 쪽은 손가락이 부서졌고.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    쩃든 같은 학교 나온 애들 대상으로 복수극이라도 하는듯? 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c12"><b>정채은</b>
+    종합해보면 생명에 지장이 갈 정도는 아니네요. 뭐, 범인의 의도를 제가 어떻게 알겠어요? 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    지금 당하고도 아빠들때문에 가만히 있어야 하는 것도 열받아 죽겠는데! 
+  </p><p class="player p_c1"><b>서이본</b>
+    음... 사망자는 나오지 않았네요. 이 중에선 이재원씨가 가장 심한가 보군요. 
+  </p><p class="player p_c12"><b>정채은</b>
+    재원이요? 아~ 그거 엄살이에요. 피 좀 흘린 거지, 저 처럼 다리를 못 쓰게 된 것도. 다른 애들처럼 팔이나 손을 못 쓰게 된 것도 아니니까. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아놔ㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c12"><b>정채은</b>
+    그냥 침대에 누워 있다 보면 어련히 낫겠죠. 운도 좋은 새끼...  
+  </p><p class="player p_c1"><b>서이본</b>
+    (아,아니 차가 다 찌그러졌던데.) 
+  </p><p class="player p_c2"><b>배다예</b>
+    (벤X리 에어백은 뭐가 다르구나...) 
+  </p><p class="player p_c1"><b>서이본</b>
+    (성능 개쩌네...) 
+  </p><p class="player p_c2"><b>배다예</b>
+    저... 마지막 질문이지만, 그럼 혹시 가해자로 의심되는 사람 있습니까? 
+  </p><p class="player p_c12"><b>정채은</b>
+    있어요. 너무 많아서 문제지.  
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    내가 착하게 살지 않았거든. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (저런.) 
+  </p><p class="player p_c12"><b>정채은</b>
+    그중에 누구인지 몰라서 얌전히 처박혀있잖아. 콱 죽여버리지도 못하고. 
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    뭐. 하여튼.. 곧 간병인이 돌아올거라서요.  
+  </p><p class="player continued-line p_c12"><b>정채은</b>
+    이만 가봐요. 큰 기대를 하는 건 아니라도 잡으면 뭐라도 보답할게요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    도움이 됐습니다. 수사에 협조해주셔서 감사합니다. (고개 꾸벅이고 병실 나온다.) 
+  </p><p class="player p_c3"><b></b>
+    얻을 수 있는 정보는 다 얻었습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    단순한 교통사고가 고위층 자녀들을 노린 테러로 바뀌는 건 순식간이군요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    어찌 되었든 이동하는 게 좋겠습니다. 괜히 들킬 필요는 없잖아요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    미닫이문을 조심스럽게 열었다면 이동해봅시다. 엘리베이터로 향해볼까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    되도록 은밀하게 가는 게 좋겠죠. VIP 병동에서 수상해 보일 필요는 없습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    전원, 은밀 행동 판정 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=20  은밀행동 (1D100&lt;=20) 보너스, 패널티 주사위[0] ＞ 81 ＞ 81 ＞ 실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    이럴줄알았다ㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=60  은밀행동 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 94 ＞ 94 ＞ 실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    어어 다죽자 
+  </p><p class="player p_c2"><b>배다예</b>
+    그래 다 죽자 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    (쩝. 몸집이 커서 아무래도..)  
+  </p><p class="player p_c2"><b>배다예</b>
+      
+  </p><p class="player p_c3"><b></b>
+    때마침 주변의 병실에서 나오던 간호사와 마주칩니다. 
+  </p><p class="player p_c9"><b>간호사</b>
+    여기에서 뭘 하십니까? 
+  </p><p class="player p_c3"><b></b>
+    성공할 뻔 했는데 말이죠. 그 어설픈 경계선이 오히려 수상하게 보였을까요.  
+  </p><p class="player p_c1"><b>서이본</b>
+    아~ 1402호 환자 사고 조사 나왔는데, 못 들으셨구나.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    아니 사람 좋아보이는 웃음 ㅈㅉ 개웃 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    서이본, 대인 기능 판정 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=50  설득 (1D100&lt;=50) 보너스, 패널티 주사위[0] ＞ 50 ＞ 50 ＞ 보통 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    헉헉헉헉ㅆㅂ 
+  </p><p class="player p_c3"><b></b>
+    와 딱 50 
+  </p><p class="player p_c1"><b>서이본</b>
+    십년감수ㅁㅊ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c9"><b>간호사</b>
+    아아, 조사 나오셨구나. 그럼 수고하세요~ 
+  </p><p class="player p_c1"><b>서이본</b>
+    예, 고생하십니다~ (꾸벅) 
+  </p><p class="player p_c3"><b></b>
+    납득한 간호사는 갈 길을 갑니다. 하마터면 경비 인력한테 끌려갈 뻔 했어요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    휴. 착하게 생겨서 살았다. (아님) 
+  </p><p class="player p_c3"><b></b>
+    엘리베이터를 차고서 순찰차로 되돌아오는 건 순식간이었을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그만큼 서둘렀다면 결정 또한 빨라야겠죠. 이제 두 사람이 갈 곳을 정해볼까요. 
+  </p><p class="player p_c2"><b>배다예</b>
+    응....? 네? (내가 잘못 들었나.) 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70 먹금  (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 81 ＞ 81 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    뭐. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    다음은 송도국제고등학교?  
+  </p><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=99 잡도리 (1D100&lt;=99) 보너스, 패널티 주사위[0] ＞ 35 ＞ 35 ＞ 어려운 성공
+  </span></p><p class="player p_c1"><b>서이본</b>
+    (아ㅅㅂ) 
+  </p><p class="player p_c2"><b>배다예</b>
+    선배 수사에 필요도 없는 말 좀 그만 합시다. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    웃기기라도 하면 몰라... 그 거울 보면 아실 거 잖아요? 
+  </p><p class="player p_c1"><b>서이본</b>
+    개 뭐라하네. 
+  </p><p class="player p_c2"><b>배다예</b>
+    흥흥... 아무튼 송도국제고등학교로 가요.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    아무래도 사건의 키는 그곳에 있을 것 같으니까.... 
+  </p><p class="player p_c1"><b>서이본</b>
+    용의자는 추릴 수 있겠지, 뭐. 
+  </p><p class="player p_c3"><b></b>
+    송도 국제 학교. 
+  </p><p class="player continued-line p_c3"><b></b>
+    네 명의 피해자는 고위층 자녀라는 걸 제외한다면 단 하나의 공통점을 갖고 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    송도 국제 학교를 재학했었다는 것. 그곳에서는 무언가 남아있을지도 모릅니다. 학교란 3년이라는 시간을 생활하면서 무엇이든 남기기 마련이니까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    마치 물 밑에서 굴러다니는 조약돌처럼. 
+  </p><p class="player continued-line p_c3"><b></b>
+    우리는 이제부터 손을 집어넣어서 그것들의 모양을 확인해야 합니다. 뾰족한지. 반들반들한지.<br>아예 다른 생김새인지.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    차량이 움직이기 시작합니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    오늘 왜케 주사위 폐급이지 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    그러다보면 어느새 커다란 건물에 가까워집니다. 보통 학교보다 건물이 두 세개는 더 붙어있네요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    그러게요 저는 원래 주운 개폐급인데 
+  </p><p class="player continued-line p_c3"><b></b>
+    잘나와서 놀라는중 
+  </p><p class="player continued-line p_c3"><b></b>
+    제가 퍙님 주운 다 뺏어간듯 
+  </p><p class="player p_c1"><b>서이본</b>
+    내 주사위를 돌려줘, 내 주사위를 돌려줘 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    수업의 막바지에 이르던 중일까요. 창문 밖으로 순찰차를 목격한 학생이 있나 봅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    고개를 내밀고서 시끌시끌한 목소리가 울리네요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    여기에서 굳이 손을 흔들어줄 필요는 없습니다. 좋은 일로 온 것도 아닌데요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    용건을 해결하기 위해 교무실로 가봅시다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    중앙 현관을 지나 2층으로 올라가게 되면 나이가 든 교사가 다가와서 묻습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    "혹시 학부형이십니까? 무슨 일로 와주셨을까요." 
+  </p><p class="player p_c1"><b>서이본</b>
+    (미리 경찰수첩 꺼내 보이고,) 사건조사로 오게 되었습니다. 보자... 피해자가 26세니까. 7년전 졸업생 명단이나, 관련한 여러 정보가 필요해서요.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    피해자 이름 이재원인데 자꾸 김재원으로 개명시켜버릴라 함 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    네. (고개 끄덕이고는) 이재원 학생과 정채은 학생을 비롯한 무리들에 대해 기억하고 계시다면 수사에 더 도움될 것 같습니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    유튜브 중독 
+  </p><p class="player p_c2"><b>배다예</b>
+    오늘의 정보) 이재원은 오버워치 프로게이머 본명이다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    자초지종을 들었을까요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    하 이러나저러나 오버워치쪽이네 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    탄식 어린 숨을 내뱉던 남자는 어느 한쪽에 앉아있는 교사에게 손짓합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    "박제형 선생님. 이쪽으로 와주시겠어요." "그 당시 녀석들을 맡아주셨지 않습니까? 담임으로." 
+  </p><p class="player continued-line p_c3"><b></b>
+    건너편에서 이야기를 들었을까요. 안경을 벗고 자리에서 일어난 남자는 썩 좋은 표정이 아닙니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    부정하지 않는 걸 보아하니 사실이군요. 엄지와 검지로 눈가를 문지르더니 말합니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    근데 리버스 창씨개명 정말 좋다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c13"><b>박제형</b>
+    박제형이라고 합니다. 네 학생이라면 1학년이었을 당시 모두 제 반이었어요. 제가 도움이 될지는 모르겠지만.... 
+  </p><p class="player continued-line p_c13"><b>박제형</b>
+    이쪽으로 와주시겠습니까? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    나 진짜 일알못이고 관심도 없어서 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    일본인 이름 죄다 잊어먹고 보이드 수사 말아먹음(ㄴㄴ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    교무실의 중앙에 있는 캐비넷을 열어젖힙니다. 안에는 종이로 된 수백개의 파일이 있어요. 그중에서 몇 개를 꺼내는군요.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    피해자들의 재학 당시 1학년 C반 생활 기록부입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    파일을 열어본다면 이재원,정채은, 김강우, 지현욱의 생활 기록부를 살펴볼 수 있습니다. <br>그들은 각자 골프, 전통 무용, 모델, 야구로 진로를 잡고 입학하였습니다. 성적이 낮은 편도 아니었어요. <br>문제가 있다면 동급생을 괴롭히는 일이 잦았다는 겁니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    동지를만나너무기쁩니다 
+  </p><p class="player continued-line p_c3"><b></b>
+    저또한일본인이름개헷갈려해서 
+  </p><p class="player continued-line p_c3"><b></b>
+    성이 같은 가족인데도 못알아봄 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    전원, 자료조사 판정. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=60  자료조사 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 1 ＞ 1 ＞ 대성공
+  </span></p><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=60  자료조사 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 36 ＞ 36 ＞ 보통 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아니대성공뭐야? 
+  </p><p class="player p_c1"><b>서이본</b>
+    이모든건 대성공을위한추진력이었다고 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+     <br> 
+  </p><p class="player p_c3"><b></b>
+    교내 처벌의 수위도 낮았다는 걸 알 수 있습니다. 교내 청소라거나 반성문 정도. 상습적으로 일어난 상황인데도 처벌 강도는 맨 처음과 달라지지 않았어요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    불쾌합니다.<br>경찰이라는 직종을 가진 당신이기에 더더욱 그렇지 않나요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그런데, 넘기다보면 위화감을 느낍니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    잉크가 말라붙어서 들러붙어 있던 걸까요. 두 장이 하나로 겹친 것을 발견합니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    조심스럽게 떼어내면 미처 읽지 못했던 생활 기록부를 발견합니다. 피해자들의 문서는 전부 확인했지만 이 김에 읽어볼까요. 
+  </p></div><div class="tab tabInfo"><div class="tabtitle">정보</div><p class="player p_c14"><b>진아사의 생활 기록부</b>
+    진아사.<br>송도 국제 학교 1학년. 수영 특기생.<br><br><br>학기 초까지만 해도 성실하게 출석한 것을 확인할 수 있습니다. 누구보다 빠르게 자유형으로 헤엄치는 경기 종목의 선수이지만. 싱크로나이즈 선수들이 하듯이 젤라틴을 머리에 덮은 적도 있다고 하네요. 더 빠르게 갈 수 있을지도 모른다는 생각 하나로요. 여러모로 열정이 넘쳐났던 것 같습니다. 그러다가 교내 상담을 받게 되었던 것 같아요. 일곱번의 상담을 받은 이후로는 입원을 하게 되고······. 자퇴 절차를 밟았습니다.<br> 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    (누가 피해자고 누가 가해자인지 원.) 
+  </p><p class="player p_c3"><b></b>
+    교내 상담실.  
+  </p><p class="player continued-line p_c3"><b></b>
+    이곳에서 기록이 남아있을까요. 한 번 가보는 것도 좋겠어요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    왠지 모를 직감일 겁니다. 여태껏 보지 못한 이름인데도 두 사람이 고개를 끄덕이는 건 그런 이유일 거예요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그런데, 이상합니다. 이 학생 기록부에 있는 앳된 얼굴.  
+  </p><p class="player continued-line p_c3"><b></b>
+    어디에선가 봤나요? 
+  </p><p class="player p_c2"><b>배다예</b>
+    교내 상담실이라면... 올라오면서 봤어요. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    1층 중앙현관 주변에 있던데, 바로 갈까요? 
+  </p><p class="player p_c1"><b>서이본</b>
+    바로 방문하자. (기록부를 지금껏과는 다르게 경쾌히 턱, 덮어버린다.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    우리 송도국제고랑 인연잇나봐 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    난몰라저런재벌들 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    배다예가 고개를 끄덕입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    나무로 된 문을 밀어내고서 복도로 향합니다. 계단을 내려가는 때면 이따금 목소리가 들려옵니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아직 어른이 되지 않은 아이들. 교복을 입고 있는 그들. 
+  </p><p class="player continued-line p_c3"><b></b>
+    미성숙의 아름다움을 사람들은 청춘이라 말하곤 합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그만큼이나 모두 순진했다면 좋았을 텐데. 어쩌면 그런 생각을 했을까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    발소리가 이어지다 보면 문 앞에 멈추어 섭니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    야우리도청춘이있엇어 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    자물쇠가 달리지 않았으니 그대로 들어갈 수 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    벌컥, 문을 열고 들어가자마자 보이는 광경은······. 특별하지 않습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    열린 창문으로 넘어오는 바람. 흔들리는 커튼. 떠도는 먼지와 녹차 냄새. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어디에서든 마주할 법한 광경. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    우리는 지금도 이팔청춘이야 
+  </p><p class="player p_c3"><b></b>
+    ㄹㅇ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    정면으로 보이는 [책상]이 있습니다. 뒤쪽으로는 [책장]과 소파 사이로 창문이 보입니다. 오른쪽에는 컴퓨터가 올려진 책상이 있군요. 왼쪽을 보면 양쪽으로 무는 열 수 있는 [수납]이 보입니다.  
+  </p><p class="player p_c1"><b>서이본</b>
+    엥, 아무도 없나. 
+  </p><p class="player p_c2"><b>배다예</b>
+    없나 본데요....(휑~) 
+  </p><p class="player p_c1"><b>서이본</b>
+    걍 둘러보지 뭐. 우리가 경찰인데 뭐 어떠리~  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (책상 먼저 살핀다!) 
+  </p><p class="player p_c3"><b></b>
+    책상 위로는 반쯤 찻물이 남아있는 주전자와 두 개의 찻잔이 있습니다.<br><br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    퇴근하면서 치우는 걸 잊었을까요. 잔 내부를 들여다보면 한쪽은 비어있지만 한쪽은 절반도 채 비우지 못했어요.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    그만큼 이곳에 들어서는 사람들의 고민은 다를 겁니다. 어린 마음이라 하더라도 그들의 고민도 어리지는 않을 거예요. 
+  </p><p class="player p_c2"><b>배다예</b>
+    역시... 상담 기록을 막 놔두지는 않겠죠. (책장 뒤적인다.) 
+  </p><p class="player p_c3"><b></b>
+    나무로 된 책장에는 온갖 책이 꽂혀있습니다. 청소년 상담에 연관이 된 저서로군요. 이만한 수를 상담 선생님이 직접 모은 거라면. 그분께서는 직업에 열의가 있었던 것 같습니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    적어도 가벼운 마음으로 임하지는 않았을 거예요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    책등을 살피면 손때가 묻은 게 꽤 많이 있다는 걸 알 수 있습니다. 출간한 지 꽤 지난 책도 가끔 꽂혀있다는 것도요.  
+  </p><p class="player p_c2"><b>배다예</b>
+    여기에도 없는데.... (중얼) 
+  </p><p class="player p_c1"><b>서이본</b>
+    책장이 아니라면 역시 컴퓨터지. (컴퓨터 뒤져본다.) 
+  </p><p class="player p_c3"><b></b>
+    컴퓨터에는 형식적인 문서 파일과 메신저어플만이 전부입니다.  
+  </p><p class="player p_c1"><b>서이본</b>
+    젠장. 꽝이네.  
+  </p><p class="player p_c2"><b>배다예</b>
+    그럼.... 남은 곳은 하나네요. 수납장?  
+  </p><p class="player p_c1"><b>서이본</b>
+    수납장엔 제발. (뒤적뒤적..) 
+  </p><p class="player p_c3"><b></b>
+    수납장의 위에는 [파일]이 놓여있습니다. 그 밑으로 시선을 두면 양쪽으로 열 수 있는 [문]이 있네요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    정답~! (파일부터 바로 펼쳐본다!)  
+  </p><p class="player p_c3"><b></b>
+    애석하게도 이건 상담 일지가 아닙니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    교내 학생들에게 나누어줄 통신문 초안인 것 같아요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    고뇌하는 사람이 있다면. 
+  </p><p class="player continued-line p_c3"><b></b>
+    마음이 아픈 사람이 있다면, 무엇이라도 털어놓고 싶다면, 홀로 머무르지 않고서 이곳으로 와달라는 외침. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이게 누군가의 순간을 한 번이라도 바꿀 수 있을까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    황폐하기만 했던 마음에 한 방울의 빗물이 되어줆까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그건 미지수의 일입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아무도 예측하지 못 할 것입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어쩌면 헛수고일지도 모릅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그럼에도 당신은 비웃지 않을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    단 한 사람이라도 붙잡기 위해 살아가기에. 
+  </p><p class="player p_c2"><b>배다예</b>
+    선배 왜 이렇게 못 찾아요....! (핀잔) 
+  </p><p class="player p_c1"><b>서이본</b>
+    마음은 따듯하지만 아쉽게도 꽝이고, 우리한텐 찬바람이 분다...  
+  </p><p class="player p_c2"><b>배다예</b>
+    (돌부처가 된 서이본을 옆으로 하고...) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    (문을 열어본다.) 
+  </p><p class="player p_c3"><b></b>
+    수납장의 문을 조심스럽게 열어보면 그 안이 꽉 차 있다는 걸 알게 됩니다. [카세트테이프]와 [구형 라디오]가 있네요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어째서 이런 게 있는 걸까요.<br> 
+  </p><p class="player p_c1"><b>서이본</b>
+    상담 내용을 녹음이라도 한건가? (이게 되는지는 둘째치고...) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    우선은 땡큐지. (라디오에 테이프 넣고 재생해본다.) 
+  </p><p class="player p_c3"><b></b>
+    서이본, 자료조사 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=60  자료조사 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 53 ＞ 53 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    아날로그의 나라에서 살아서 다행.  
+  </p><p class="player p_c3"><b></b>
+    수많은 이름들이 붙어있다는 걸 알게 됩니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    수많은 테이프에는 각자 다른 이름들이 적혀 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    한두명이 아니에요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    개교하고서 지금까지도 수많은 이름이 이어집니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    해가 바뀌고 시간이 흐르더라도. 
+  </p><p class="player continued-line p_c3"><b></b>
+    슬픔과 사람에 지쳐서 이곳을 찾은 학생들인 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그래요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이건 나름의 묘수였을 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    멋대로 나쁜 마음을 품은 아이들이 쉽게 찾아볼 수 없도록 한 방법. 
+  </p><p class="player continued-line p_c3"><b></b>
+      
+  </p><p class="player continued-line p_c3"><b></b>
+    비뚤어진 마음에 가만히 머무르는 참을성은 없을 테고. 
+  </p><p class="player continued-line p_c3"><b></b>
+    테이프를 훔쳤다가는 곧바로 들킬 테니까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    마침내 당신은 진아사의 상담 테이프를 주워 듭니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    미리 실례합니다, 학생.  
+  </p><p class="player p_c3"><b></b>
+    구형 라디오의 네모난 칸을 누르자 쩍 하니 입을 벌립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그 안에 테이프를 밀어 넣었어요. 달칵. 곧이어 재생 버튼을 눌러봅니다. 머지않아 목소리가 흘러나옵니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이것은 과거의 흔적. 
+  </p><p class="player continued-line p_c3"><b></b>
+    누군가 숨을 흘려낸 순간마다 반복하였을 기록. 
+  </p></div><div class="tab tabInfo"><div class="tabtitle">정보</div><p class="player p_c15"><b>진아사의 상담 테이프</b>
+    첫 번째 상담<br>지금부터 기록하는 거구나.<br>사실 여전히 망설여져요.<br>그래도, 왔으니까······. 들어주시겠다고 하셨으니까.<br>선생님. 아무래도 전 괴롭힘을 받는 것 같아요.<br>제가 그 애들에게 뭔가 실수한 게 있는 걸까요.<br>오해가 있다면 풀고 싶어요.<br> 
+  </p><p class="player continued-line p_c15"><b>진아사의 상담 테이프</b>
+    두 번째 상담<br>처음에는 혼자 식사만 했는데. 아무도 짝이 되어주지 않기만 했는데.<br>같이 청소를 해야 하는 애들이 없었어요.<br>내일이면 까먹었다고 할 테지만······.<br>그 애들의 눈치를 봐서 그랬다는 걸 알아요.<br>괜찮아요. 수영부에서는 전과 다를 게 없는걸요.<br>외롭지 않아요. <br> 
+  </p><p class="player continued-line p_c15"><b>진아사의 상담 테이프</b>
+    세 번째 상담<br>쉬는 시간이면 이곳으로 내려오는 버릇이 생기고 있어요.<br>교실에서 딱 10분만 버티면 된다는 걸 아는데도.<br>물속에서 숨을 참는 2분보다 괴로워요.<br>어쩌면 전 물고기일지도 몰라요.<br>어항 밖으로 나온 금붕어는 힘들게 뻐끔거리잖아요.<br>제가 꼭 그런 것 같아요.<br> 
+  </p><p class="player continued-line p_c15"><b>진아사의 상담 테이프</b>
+    네 번째 상담<br>아, 왜 다쳤냐면······. 조금, 다투고 말아서.<br>수영복을 입으면 다 보일 거라는 게 속상해요.<br>괜찮아요. 그래도, 헤엄칠 수 있으니까.<br>선생님. 요즘 이런 생각이 들어요.<br>친구가 없어도 괜찮으니까. 외로워도 괜찮으니까.<br>빨리 어른이 되고 싶어요. 
+  </p><p class="player continued-line p_c15"><b>진아사의 상담 테이프</b>
+    다섯 번째 상담<br>화장실에서 가만히 숫자만 세어보았어요.<br>졸업까지 남아있는 시간을 떠올려보는데, 너무 길어요. 너무 길어요. 선생님······. 
+  </p><p class="player continued-line p_c15"><b>진아사의 상담 테이프</b>
+    여섯 번째 상담<br>침대 위에서 일어나는 시간이 늦어져요.<br>오전 연습에도 매번 지각하게 되네요. 코치님께서 무슨 일이 있으시냐고 물으시지만.<br>어떻게 말하겠어요.<br>학교에 오는 게 싫어서 그랬다고.<br>아침이 오는 게 무서워서 그랬다고.<br>선생님.<br>전, 이제 제 이름마저 싫어요. 
+  </p><p class="player continued-line p_c15"><b>진아사의 상담 테이프</b>
+    일곱 번째 상담<br>그 애들에게 진아사는 가벼웠을까요.<br>계단에서 사람을 미는 게 쉬웠을까요.<br>사과는 그토록 어려웠을까······.<br>이해하고 싶지 않아요.<br>받아들이고 싶지 않아요.<br>어째서 내 꿈은 끝나야만 했을까.<br>왜, 저는 헤엄칠 수 없는 건가요?<br> 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    다 읽으셧으면 알려주시길..../// 
+  </p><p class="player p_c1"><b>서이본</b>
+    다 읽엇.다. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    평온하였던 음성은 점차 흐트러집니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    때로는 애써 웃는 것처럼 들리기도 했고. 우울함에 잠긴 듯이 가라앉기도 했습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    마지막은······. 어떻게 들렸을까요. 꿈이 무너져버린 인간의 목소리는 어땠나요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어른들과 아이들의 악의로 무너진 슬픔이, 어땠나요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    상담 테이프의 작동이 멈춥니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    더는 아무 목소리도 흘러나오지 않습니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    음... 심증만으로는 의심해볼 여지가 충분하네. 
+  </p><p class="player p_c2"><b>배다예</b>
+    나빴다, 너무... 나빴네. (무엇을 겹쳐보는 것인지 말을 꺼내지는 않지만, 아마 서이본이라면 알 수 밖에 없을 것이다. 타의에 의해 꺾여버린 꿈. ) 심증만으로는 분명하죠.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    제발 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아 후배가왜이리착해 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    ... 그런 건 시간이 지나고도 잊혀지지 않을테니까. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    끄응 야차뜨자 양놈색히들아 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    ...안 잊혀지지. (허리 쭉 편 뒤, 팔짱 끼고서는.) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그래도 아니었으면 좋겠네. (폭력을 폭력으로 덮는다는게 무의미하다는걸 난 딱 이 나이에 배웠는데.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아제발... 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    (괜히 더 남은 것 없나 소파도 한번 본다.) 다른 용의자가 있대도 그건 또 그것 나름 문제고... 
+  </p><p class="player p_c3"><b></b>
+    소파를 둘러봐도 아무것도 보이지 않습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    배다예 입을 다문 채로 구형 라디오를 바라보고 있습니다.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    이 사건의 전말을 예측해가는 건 당신만이 아닌 듯 해요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그러면서도 기시감에 빠졌을지도 모릅니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    어디에선가 이 목소리를 들은 적이 있잖아요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 지능 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70 지능 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 92 ＞ 92 ＞ 실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아놔 
+  </p><p class="player p_c3"><b></b>
+    하 진짜 개웃 
+  </p><p class="player p_c1"><b>서이본</b>
+    과거쑤시기 당하고 이성펌블온듯ㅋㅋ 
+  </p><p class="player p_c3"><b></b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c3"><b></b>
+    잠만 
+  </p><p class="player continued-line p_c3"><b></b>
+    그건웃을얘기가아닌데. 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    모르겠습니다... 우리 다시 한 번 카세트를 들어볼까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 듣기 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=60  듣기 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 23 ＞ 23 ＞ 어려운 성공
+  </span></p><p class="player p_c3"><b></b>
+    달칵. 카세트 테이프가 돌아가고.... 
+  </p><p class="player continued-line p_c3"><b></b>
+    다시 한 번 여자의 목소리가 흘러나옵니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아, 맞아요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    이제는 알겠습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    경찰청으로 향하던 길에 난처해 보였던 여자.  
+  </p><p class="player continued-line p_c3"><b></b>
+    그때 들었던 목소리와 똑같지 않나요? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아이씨미친 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    사소한 조건이 서서히 들어맞는 과정. 머릿속에서 퍼즐은 하나의 얼굴을 내밀었습니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아~!~!~!왜나왔나했더니 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    세상은 좁습니다. 어디를 가더라도 기어이 마주치게 되는 삶이 있어요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    처음나왔을때부터 흠.수상. 했는데 정작 수사할때 잊고 잇엇네ㅁㅊ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    형사와 범인 또한 그럴 것입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아사는 헤엄을 칠 수 없게 되었습니다. 꿈을 잃어버렸습니다. 그런 다리로도 페달은 밟을 수 있다는 걸 이용한 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    네 사람을 노리고서 성공하였으니 만족할까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어린 나이에 들이닥치고 말았던 불운을 흘려내게 될까요. 어쩐지 복잡한 속일지도 모릅니다. 사건의 전말을 추리해냈는데도 후련하지 않을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    인생은 애니메이션이나 드라마와는 다르다. 산타클로스가 세상에 없다는 것처럼 언제부터인가 알게 되는 사실. 
+  </p><p class="player continued-line p_c3"><b></b>
+    당연한 말이지만 이건, 너무 입이 쓰지 않나요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    정적을 보내다보면 의자가 넘어지는 소리가 들립니다. 돌아보면 배다예는 눈을 크게 뜬 채 당신을 바라보네요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 누가봐도 개수상. 햇죠 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    선배, 복수는 끝난 게 아니에요. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    이재원이요. 피만 흘린 거잖아요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    아. 그렇네.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    각자 필요한 신체부위를 하나씩 분질어놨으니... 돌아오겠구나. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    (시계 한번 확인하며) 다시 병원으로 갈까. 
+  </p><p class="player p_c3"><b></b>
+    이재원은 대량의 혈액을 흘렸습니다. 다른 세 사람이 저마다 불편을 새긴 것과 달라요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    배다예의 말에 긍정할 수밖에 없을 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그렇지 않나요. 차이점이 있다면 자동차 안에서의 시도가 불가능하다는 겁니다. 그런다고 하여서 멈출까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아닙니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    분명 아닐 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    한 번 저질렀다면 두 번은 쉬운 일입니다. 더 많은 횟수도 어렵지 않아요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    새로운 교복을 채 일 년도 지나지 않아 벗어야만 했던 진아사. 꿈이 망가졌는데도 홀로 학교를 나올 수밖에 없던 소녀. 완벽한 동기는 그만큼 악의를 완전하게 만듭니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    시작과 끝은 하나의 실과 같으니. 도로 위의 과실치사로 끝낼 수 있었을 복수극은 한 발을 더 나아가는 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    여태까지 그랬던 것처럼 부상으로 멈출 수 있기는 할까요. 영영 다치게 한다고 해서 만족할까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    과연, 지금을 행운으로 여기지는 않을까요······. 
+  </p><p class="player continued-line p_c3"><b></b>
+    과거의 피해자는 손을 더럽히게 될 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    다시는 돌이키지 못할 너머로. 
+  </p><p class="player continued-line p_c3"><b></b>
+    창밖으로는 해가 저물고 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    하루가 끝나가고 있습니다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    병원으로 가야죠. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    선배, 늦지 않을 수 있겠죠. 
+  </p><p class="player p_c1"><b>서이본</b>
+    우리가 더 빨라야지. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    빠를거야. 경찰은 아니고, 군인의 감. 
+  </p><p class="player p_c2"><b>배다예</b>
+    하- 뭐에요 그게. <br> 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    그래요, 그러면... 군인의 감을 믿어보자고요. 
+  </p><p class="player p_c3"><b></b>
+    무엇을 말했나요. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    어떤 음절로 답하였을까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    무엇이든 상관없습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    확인은 필요하지 않습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    두 사람은 나란히 달렸을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    무엇보다도 빠르기 위해서 달음박질을 칩니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    운동장의 가장자리에 있을 순찰차로. 
+  </p><p class="player continued-line p_c3"><b></b>
+    Chapter 3. CROSSED THE LINE! 
+  </p><p class="player continued-line p_c3"><b></b>
+    두 사람은 문을 열자마자 거의 뛰어들었습니다. 보통이라면 본부에 보고를 한 뒤 협력을 바랄 테지만. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    브금 바뀔때마다진짜좋으다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    매번 무마시켰다는 말을 떠올려본다면, 이진영의 케이스를 떠올려본다면······. 쉽게 무전기를 들 수 없을 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    허무하게 무마시킨다거나. 제대로 마무리짓는 일도 없을테니까요. 어른이 되었음에도 어른들의 사정에 휘말려서. 어른이 되었음에도 아이의 악의를 감당하지 못하고. 
+  </p><p class="player continued-line p_c3"><b></b>
+    반복할 수는 없습니다. 바라던 끝이 있다면 직접 해내야합니다. 다른 사람이 아니라 두 사람이. 
+  </p><p class="player continued-line p_c3"><b></b>
+    해는 완전히 저물었습니다. 사방이 어두컴컴해요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    심지어 문제가 있다면. 
+  </p><p class="player continued-line p_c3"><b></b>
+    전원, 듣기 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=60  듣기 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 29 ＞ 29 ＞ 어려운 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    우효!!!!!!!! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=70  듣기 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 9 ＞ 9 ＞ 대단한 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    날씨 ㅈ됏나보지. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    하늘이 찢어지는 듯한 소리가 울립니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    앉은 자리에서 깜짝 놀랄 만큼. 번개가 공기 중을 가로지르고 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    천둥이 울리고 있습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    갑작스러웠던 터라 그만 깜짝 놀라버렸을 거예요.  SANC (0/1) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아아아아아아악!!!!!!!!!!!!! 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    개좋다 ㅁㅊ!!!!!!!! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=58  이성 (1D100&lt;=58) 보너스, 패널티 주사위[0] ＞ 21 ＞ 21 ＞ 어려운 성공
+  </span></p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=39  이성 (1D100&lt;=39) 보너스, 패널티 주사위[0] ＞ 73 ＞ 73 ＞ 실패
+  </span></p><p class="player p_system"><b>system</b>
+    [ 서이본 ] SAN : 39 → 38 
+  </p><p class="player p_c2"><b>배다예</b>
+    선배, 애처럼 겁먹은 건 아니죠? 
+  </p><p class="player p_c1"><b>서이본</b>
+    아, 전쟁 ptsd. 총성인줄. (웃지못할 개그 시전) 
+  </p><p class="player p_c2"><b>배다예</b>
+    ...... (무시했다.) 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    개웃기게 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    슬슬 사람들은 퇴근하는 시간입니다. 심지어 날씨마저 이 모양이죠. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서울의 교통 체증은 이미 정해진 일이나 다름없어요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아침에는 아슬아슬하게 도착했나요. 아니면 지각해버렸나요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그때는 무엇이든 괜찮았을 겁니다. 상사에게 살짝 밉보였을 뿐이니까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    지금은 늦지 말아야 합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    무슨 일이 있어도 늦지 말아야 해요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    더는 돌이키지 못하는 상황이 발생하기 전에. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이 세상에서 가장 빠른 게 빛이라면 그보다 빨라야 하고. 
+  </p><p class="player continued-line p_c3"><b></b>
+    지금 눈앞에서 가장 빠른 게 번개라면 그조차 추월해야 합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    배다예는 안전벨트를 한 손으로 움켜쥐고서 말했습니다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    가요, 파트너. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    세브란스 병원으로. 
+  </p><p class="player p_c3"><b></b>
+    달려볼까요, 파트너. 
+  </p><p class="player p_c1"><b>서이본</b>
+    가보자, 파트너. 
+  </p><p class="player p_c3"><b></b>
+    우리의 한계를 시험하듯이. 
+  </p></div><div class="tab tabInfo"><div class="tabtitle">정보</div><p class="player continued-line p_c3"><b></b>
+    하우스룰<br><br>운전자의 &lt;자동차 운전&gt; 기능을 라운드마다 판정합니다. 실패할 시에는 한 칸을 이동합니다. 보통 성공일 때는 1D3, 어려운 성공일 때는 1D5, 극단적인 성공일 때는 1D6, 대성공일 시는 1D8 주사위를 사용하여 그 숫자만큼 이동합니다. PC의 운전 솜씨에 경탄하는 서술을 추가해준다면 더욱 즐거운 진행이 될 겁니다. 파트너를 나만의 F1 드라이버로 만들어보아요.<br><br><br>커브길에 들어서는 8, 16, 24에 도착할 때마다 자동차는 파손의 위험을 겪습니다. 그때마다 자동차 운전 판정을 통해 위기에서 벗어날 수 있습니다. 1회의 충돌로 자동차의 HP는 2 감소합니다. 대실패를 할 시 2점의 추가 파손 패널티가 이루어집니다. 자동차의 전체 HP는 6입니다.<br><br><br>예상했을까요?<br>재수가 없다면 자동차는 중간에 고장나게 됩니다!<br><br><br>자동차가 움직일 수 없는 상황에 도달하였을 시, 차량을 버려주세요. 그때부터는 &lt;민첩&gt; 판정을 통해 이동하게 됩니다. 다이스 이동 반경은 각각 1, 1D2, 1D3, 1D4, 1D5로 변경합니다. 어떻게든 우리들의 순찰차를 아껴야겠죠. <br><br><br>라운드는 최대 15회.<br> 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    와띠발 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    주사위운 조졋는데 큰일낫네 
+  </p><p class="player p_c3"><b></b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c3"><b></b>
+    괜찮아괜찮아 버리고 뛰어가도돼요 
+  </p><p class="player p_c1"><b>서이본</b>
+    아,안돼 파트너...!! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    1ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    가속 페달을 밟고 싶은 마음이 굴뚝 같습니다만.  
+  </p><p class="player continued-line p_c3"><b></b>
+    마음처럼 되지 않습니다. 바로 앞에서 있는 차를 밀어버릴 수는 없는 노릇이잖아요. 그르렁대듯이 천둥이 귓전을 찢어발깁니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    불안한 마음은 어쩔 수 없군요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    SANC (0/1)  
+  </p><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=58  이성 (1D100&lt;=58) 보너스, 패널티 주사위[0] ＞ 74 ＞ 74 ＞ 실패
+  </span></p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=38  이성 (1D100&lt;=38) 보너스, 패널티 주사위[0] ＞ 64 ＞ 64 ＞ 실패
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㅋㅋ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_system"><b>system</b>
+    [ 배다예 ] SAN : 58 → 57 
+  </p><p class="player continued-line p_system"><b>system</b>
+    [ 서이본 ] SAN : 38 → 37 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    사이좋다 
+  </p><p class="player p_c1"><b>서이본</b>
+    사이좆다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 40 ＞ 40 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d3 (1D3) ＞ 3
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    나그래도3띄웟어 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    (아직 안심하지 못했다... 안전벨트 꽉 붙잡은 손.) 
+  </p><p class="player p_c3"><b></b>
+    2ROUND 
+  </p><p class="player p_c1"><b>서이본</b>
+    너무 불신하는거 아냐? 
+  </p><p class="player p_c2"><b>배다예</b>
+    .... 아까 길도 못 찾았던 거 생각해봐요. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    오늘 운전 잘 하면, 그러면 믿는다니까? 
+  </p><p class="player p_c1"><b>서이본</b>
+    그건, 내가 서울 지리에 밝지 못해서. (...) 
+  </p><p class="player p_c3"><b></b>
+    덜컹! 과속 방지턱으로 인해 순간 엉덩이가 반뼘 정도 좌석과 떨어졌습니다. 안전벨트를 매지 않았다면 곤란했겠어요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    전원, 건강 판정. 
+  </p><p class="player p_c1"><b>서이본</b>
+    이건 내 탓 아니다. 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=60 건강 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 93 ＞ 93 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    (아오) 
+  </p><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=60  건강 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 26 ＞ 26 ＞ 어려운 성공
+  </span></p></div><div class="tab tabEtc1"><div class="tabtitle">GM</div><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    1D15 (1D15) ＞ 14
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    나 오늘 뭔 날인가 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    서이본은 앞으로 14분동안 멀미에 시달리게 됩니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아냐... 생각해보면 서이본은 가는 시날마다 억까를 당했던 것도 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    네? 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    개웃기게진짜 
+  </p><p class="player p_c3"><b></b>
+    나 이거 기대해서 멀미하는 표정 파왔는데 ㄲㅂ 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player p_c3"><b></b>
+    제가 대신 멀미해드릴게요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    아ㅠㅠㅠㅠㅠㅠㅠ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 판정. 
+  </p><p class="player p_c1"><b>서이본</b>
+    아... 머리 잘못 흔들림.  
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 14 ＞ 14 ＞ 대단한 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    대단한 성공은 몇,몇이지 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    이게 극성인가...? 
+  </p><p class="player p_c3"><b></b>
+    극성으로 
+  </p><p class="player continued-line p_c3"><b></b>
+    알고있는데 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅇ,ㅇㅋ. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    1D6 (1D6) ＞ 1
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아놔 
+  </p><p class="player p_c3"><b></b>
+    아 ㅋ 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    3ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    물 흘러가듯 움직였습니다. 좋아요. 여기까지 도달했다면 더 멈출 겨를이 없습니다. 앞도, 뒤도. 차량으로 꽉 막혀있어요. 틈이 생기자마자 바로 움직이는 거예요. 
+  </p><p class="player p_c2"><b>배다예</b>
+    ....  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    선배 저 속이 안 좋은 것 같은데요... 
+  </p><p class="player p_c1"><b>서이본</b>
+    나도.  
+  </p><p class="player p_c3"><b></b>
+    서이본, 자동차 운전 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 59 ＞ 59 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d3 (1D3) ＞ 2
+  </span></p><p class="player p_c3"><b></b>
+    4ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    빠른 속도로 질주합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    잘못하다가는 코앞에 있는 커브 길을 정면으로 마주하겠어요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    있는 힘껏 핸들을 움켜쥐고서 꺾어봅시다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    한 뼘이라도 더 나아가야 하니 멈춰서는 안 됩니다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    아!!!! 선배 미쳤어요!!!!!  
+  </p><p class="player p_c1"><b>서이본</b>
+    입 열지 마라. 혀 깨문다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    ...... (돌았나?) 
+  </p><p class="player p_c3"><b></b>
+    서이본, 자동차 운전 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 71 ＞ 71 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    (ㅋ)  
+  </p><p class="player p_c2"><b>배다예</b>
+    (덜커덩, 쿵!) 
+  </p><p class="player p_c3"><b></b>
+    5ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    당장 눈앞에 커브 길이 있는 게 보입니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    꽤 급격하게 움직여야 할 것 같은데요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    이 꽉 깨물어요. 순찰차 안에서 토를 한다면 아무도 책임져주지 않습니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 48 ＞ 48 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1D3 (1D3) ＞ 2
+  </span></p><p class="player p_c2"><b>배다예</b>
+    (아까 그 카세트 테이프가 트리거였나....) 
+  </p><p class="player p_c1"><b>서이본</b>
+    커브 하나 돌았고.  
+  </p><p class="player p_c2"><b>배다예</b>
+    선배, 이거 범퍼카 아닌 거 알고 계시죠.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    스트레스를 왜 순찰차로 풀지? 
+  </p><p class="player p_c1"><b>서이본</b>
+    내 차 아니고 순찰차니까?  
+  </p><p class="player p_c3"><b></b>
+    6ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    하필이면 주변에 공사를 하던 모양입니다. 자재가 있습니다. 돌아가야만 할 거예요. 이번 라운드의 &lt;자동차 운전&gt; 판정에 실패한다면 1칸 뒤로 갑니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아니 저 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    표정너무웃김 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    하.... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    아, 하필 여기서 공사를.  
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 23 ＞ 23 ＞ 어려운 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1D5 (1D5) ＞ 1
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    왜 어성 극성 띄우는데 1칸만 가야하는 것입니까 
+  </p><p class="player p_c2"><b>배다예</b>
+    ㅋ 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    7ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    자재가 산처럼 쌓여있습니다. 진작 좀 치워주면 좋았을 텐데.  
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아니 벌써 7라운드라고? 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    우리 반도 못왔는데. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 64 ＞ 64 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d3 (1D3) ＞ 3
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    그래요.  
+  </p><p class="player p_c1"><b>서이본</b>
+    왜 보통 성공 띄우는데 3낭ㅁ 
+  </p><p class="player p_c2"><b>배다예</b>
+    아 그래도 3 띄워서 다행이다.... 
+  </p><p class="player p_c1"><b>서이본</b>
+    나옴 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    하.. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    8ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    지나가다가보면 우산을 쓴 채 황급히 달려가는 학생들이 보입니다. 하교를 하는 도중에 고난을 겪게 되었군요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정. 
+  </p><p class="player p_c1"><b>서이본</b>
+    아이고. 과감하게 이건 못 피하는데. 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 43 ＞ 43 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d3 (1D3) ＞ 2
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    (뭐, 무난하고.) 
+  </p><p class="player p_c3"><b></b>
+    9ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    꺾어요. 꺾어야만 합니다. 만일 여기에서 실수한다면 오른쪽 사이드 미러가 날아가버릴 테니까요. 창문의 유리라고 해서 성하지는 않을 겁니다. &lt;자동차 운전&gt; 기능 판정에 성공할 시 차량에 손상 없이 커브를 꺾어 17번 구역으로 도착합니다.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정. 
+  </p><p class="player p_c1"><b>서이본</b>
+    (핸들 과감하게 확 꺾어버린다.) 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 49 ＞ 49 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d3 (1D3) ＞ 1
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    진짜기묘하네전부다성공하네 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    근데다이스는1만나오고 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    커브 존나 쉽지 않다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    ..... 거북이도 이것보다는 빨라요, 선배. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70 먹금 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 80 ＞ 80 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    문제가 될까. 
+  </p><p class="player p_c2"><b>배다예</b>
+    그래요, 놓치면 다 서이본 탓이라고 해야지. 
+  </p><p class="player p_c3"><b></b>
+    10ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    눈 앞에 펼쳐진 건 직선으로 이어지는 도로입니다. 이때를 놓쳐서는 안 됩니다. 달려요. 가속 페달을 밟아보도록 합시다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 12 ＞ 12 ＞ 대단한 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d6 (1D6) ＞ 2
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    ㅋ 
+  </p><p class="player continued-line p_c3"><b></b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    차가 똥차인듯? (...)  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    하............................. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    11ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    슬슬 차량이 밀리고 있습니다. 심지어 옆에서 끼어들기를 하려는 걸까요. 창문 너머로 흐릿하게 상대측 운전자의 낯이 보입니다. 어쩌라고. 이런 생각이 표정에서 드러날 수도 있겠군요. 대인 기능을 사용하여 포기하게 해주세요. 상대에게 기세가 밀리거나 양보할 시 이번 라운드의 이동이 불가능합니다.<br> 
+  </p><p class="player p_c1"><b>서이본</b>
+    아 씨X 
+  </p><p class="player p_c2"><b>배다예</b>
+    차가 똥차가 아니라 선배가 운전을 못 하는 것 같은데... 
+  </p><p class="player p_c1"><b>서이본</b>
+    경찰차인거 안보이나? 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    넌 뭐라했냐. 
+  </p><p class="player p_c2"><b>배다예</b>
+    어? 네? (모르쇠.) 저 미친새끼가! 끼어들기를 하려 해? 
+  </p><p class="player p_c3"><b></b>
+    상대는 전혀 굴하지 않고 되려 경적을 빵빵 울립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    전원, 대인 기능 판정. 
+  </p><p class="player p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=50  말재주 (1D100&lt;=50) 보너스, 패널티 주사위[0] ＞ 3 ＞ 3 ＞ 대단한 성공
+  </span></p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=60  위협 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 19 ＞ 19 ＞ 어려운 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    차빼이XX새끼야거지같은차확밀어버리기전에  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    아진자 
+  </p><p class="player continued-line p_c3"><b></b>
+    개웃기게 
+  </p><p class="player p_c1"><b>서이본</b>
+    띠발진짜 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    눈물나온다 
+  </p><p class="player p_c2"><b>배다예</b>
+    띠발진짠존나웃기네 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    하 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    전재준이있어요 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    그래그좆같은똥차확밀어버리기전에그따구로운전하는건누구한테배웠냐?내가너얼굴기억했다나중에잘못걸리기만해봐라 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    눈물나 아 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    다예야히발ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    서이본과 배다예의 기세에 눌린 운전자는 끼어들기를 포기합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정. 
+  </p><p class="player p_c1"><b>서이본</b>
+    말 존나 잘 듣네. 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 18 ＞ 18 ＞ 어려운 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d5 (1D5) ＞ 4
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    편안.  
+  </p><p class="player p_c2"><b>배다예</b>
+    (엄청나게 욕을 하더니 그 뒤로 운전을 갑자기 잘하기 시작하네....) 
+  </p><p class="player p_c3"><b></b>
+    12ROUND 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아진짜그만웃겨라제발 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    저 멀리에서 희미하게 새하얀 건물이 보입니다. 저 앞까지만 달리면 될 거예요. 나카노 종합 병원이 가까워지고 있습니다. 그걸 두 사람은 알았을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정. 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 36 ＞ 36 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d3 (1D3) ＞ 2
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    병원이 코앞이다. 금방 가겠네. 거지같은 차만 없으면.  
+  </p><p class="player p_c2"><b>배다예</b>
+    .... 이번 일로 공 세우면 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    차부터 바꿔달라 하죠. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    이 거지같은 승차감. 
+  </p><p class="player p_c3"><b></b>
+    13ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+    이를 악물고서 가속 페달을 밟습니다. 주변에 다른 차량은 보이지 않습니다. 짤막한 틈이라도 놓쳐서는 곤란해요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정 
+  </p><p class="player p_c1"><b>서이본</b>
+    우리도 벤틀리로 바꿔달라 하자. (안됨.) 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 47 ＞ 47 ＞ 보통 성공
+  </span></p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    1d3 (1D3) ＞ 3
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아니 욕하더니 진짜 잘가네** 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    zzzzzzzzzzzzzzzzzzzzzz 
+  </p><p class="player p_c3"><b></b>
+    벤틀리 이러네 하 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    14ROUND 
+  </p><p class="player continued-line p_c3"><b></b>
+     아, 이런 커다란 길에서 무단횡단은 하면 안 되는 거잖아요! 급히 브레이크를 밟았습니다. 핸들에 그대로 이마를 박아버린 터라 싸한 통증이 느껴집니다. 지금 당장은 갈 길이 바빠 딱지를 뗄 수 없다는 게 서러울까요. HP -1. 
+  </p><p class="player p_system"><b>system</b>
+    [ 서이본 ] HP : 13 → 12 
+  </p><p class="player p_c3"><b></b>
+    서이본, 자동차 운전 기능 판정. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    다이스 1나오면 우리 주차 못해서 코앞에서 차던지고 뛰어가는거임?  
+  </p><p class="player p_c3"><b></b>
+    아무래도... 쓰읍....  
+  </p><p class="player continued-line p_c3"><b></b>
+    아 근데 15까지 되니까.  
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    아오 XX! 
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70  자동차 운전 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 3 ＞ 3 ＞ 대단한 성공
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    아니 욕하고나서 
+  </p><p class="player p_c1"><b>서이본</b>
+    미쳤다 
+  </p><p class="player p_c3"><b></b>
+    다이스값 잘나오는거뭔데 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    1d6 (1D6) ＞ 5
+  </span></p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㅁㅊㅋ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    (마지막에 엄청 밟았다. 우우우우욱.....) 
+  </p><p class="player p_c1"><b>서이본</b>
+    어쨌든 해냄. (드리프트 꺾는다. 거의 차를 던져놓은 수준.)  
+  </p><p class="player p_c2"><b>배다예</b>
+    선배이거카트라이더아니라고미친새끼야!!!!!! 
+  </p><p class="player p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=70 먹금 (1D100&lt;=70) 보너스, 패널티 주사위[0] ＞ 99 ＞ 99 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    (어쩔. 귀 막음) 
+  </p><p class="player p_c2"><b>배다예</b>
+    (줘팬다.)  
+  </p><p class="player continued-line p_c2"><b>배다예</b><span class="dice-line">
+    CC&lt;=60  근접전:격투 (1D100&lt;=60) 보너스, 패널티 주사위[0] ＞ 39 ＞ 39 ＞ 보통 성공
+  </span></p><p class="player p_c1"><b>서이본</b>
+    미친놈 아냐 이거!!  
+  </p><p class="player continued-line p_c1"><b>서이본</b><span class="dice-line">
+    CC&lt;=80  근접전(격투) (1D100&lt;=80) 보너스, 패널티 주사위[0] ＞ 85 ＞ 85 ＞ 실패
+  </span></p><p class="player continued-line p_c1"><b>서이본</b>
+    아이씨X 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    이게뭐임 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    (주먹으로 너를 진짜 개 존나 팬다. 닌 무력하게 당할 수밖에 없다. 근력대항하면 내가 무조건 이긴다. 그냥 나만 존나 주먹으로 개패고 니는 맞기만 한다. 난 하나도 안 아프고 니만 존나 아프다. 난 아무 소리도 안 내고 존나 패고 너는 존나 소리지른다 존나 아플 것이다 나만 개팬다) 왜깝쳐요 
+  </p><p class="player p_c3"><b></b>
+    ... 소동이 있었지만 
+  </p><p class="player continued-line p_c3"><b></b>
+    우리는 병원에 도착했습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    억수 같이 내리는 비.  
+  </p><p class="player continued-line p_c3"><b></b>
+    순찰차에서 내려서자마자 찰박이는 물웅덩이. 등 뒤로 떨어지는 천둥과 번개의 소리. 금방이라도 땅이 갈라질 듯한 날씨.<br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    그 한가운데에서 두 사람은 다급히 순찰차에서 내립니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    우리가 향해야만 하는 곳은 정해져 있어요. 그렇지 않습니까.  
+  </p><p class="player p_c2"><b>배다예</b>
+    선배, 병실 기억하죠.  
+  </p><p class="player p_c1"><b>서이본</b>
+    1402호. 당근이지. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    이제 존나 뛰어.  
+  </p><p class="player p_c3"><b></b>
+    온몸이 질척거립니다. 막 퇴근하던 레지던트가 흘끗거릴 정도로 온몸이 축축하기만 합니다. 잠시 서 있었을 뿐인데도요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    마치 우산을 잊어버린 사람처럼 보이는 꼴입니다만. 
+  </p><p class="player continued-line p_c3"><b></b>
+    망설임 없이 걸어봅시다. 달려봅시다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그래야만 한다는 직감이 차오르잖아요. 누군가의 내레이션이 들리지 않더라도. 누군가 의도한 대로 음악이 바뀌지 않아도. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이게 바로 현실입니다. 당신이 그토록 바라던 인생입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    권총을 드는 일은 없을 뿐더러. 주먹을 들고서 범인과 싸우는 일도 없지만. 
+  </p><p class="player continued-line p_c3"><b></b>
+    누군가의 삶을 구하러 가는 밤. 
+  </p><p class="player continued-line p_c3"><b></b>
+    두 사람은 어떤 표정을 짓고 있나요 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    주먹 들고 경찰이랑 싸웠는데? 
+  </p><p class="player p_c3"><b></b>
+    아  
+  </p><p class="player continued-line p_c3"><b></b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    Chapter 4. DO NOT GO OUTSIDE THE LINE! 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    와진짜개재밋다... 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    거의 다 퇴근을 하고 있기도 하고. 
+  </p><p class="player continued-line p_c3"><b></b>
+    응급실에 들어서는 사람들은 대부분 흐트러진 모양새를 하고 있죠. 그래서일까요. 두 사람의 행색도 사실 특이한 건 아닙니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    온몸에서 물이 뚝뚝 떨어지는 걸 보고 있자니 청소부가 고생하겠다 싶을 뿐인걸요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    엘리베이터 앞에 선 배다예는 버튼을 눌렀습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    곧바로 문이 열리네요. 두 사람은 나란히 들어섭니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    붉은 디지털 숫자가 변해갑니다. 1, 2, 3······. 마치 카운트다운이라도 하는 것 같을까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    슬쩍 옆을 돌아보면 배다예의 시선이 닿습니다. 슬쩍 주먹을 들어 보이네요.  
+  </p><p class="player p_c2"><b>배다예</b>
+    (주먹 하이파이브.) 
+  </p><p class="player p_c1"><b>서이본</b>
+    경호원은 있다지만~ 뭐. 눈 돌아버린 사람을 감당 가능하겠나. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    —이럴 때는 경찰이 답이지. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그치? (주먹 마주댄다.) 
+  </p><p class="player p_c2"><b>배다예</b>
+    그쵸. (씨익 웃는다.) 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    우리는 할 수 있으니까, 가자고요. 
+  </p><p class="player p_c3"><b></b>
+    곧 엘리베이터의 안내음은 두 사람이 14층에 도달했다는 것을 알립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    복도는 어둑어둑합니다. 최소한의 조명만을 켜두었지요. 이른 잠을 청하는 환자들을 위함일 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아래층에서 간호사들은 호출이 울릴까 봐 신경 쓰면서 야간 근무를 하고 있을 테고요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    유일하게 보이는 사람이 있다면 빗자루나 양동이가 들어있는 카트를 끄는 청소부입니다. 배다예는 그제야 한숨 돌린다는 듯 말합니다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    아직... 조용한 것 같은데. 
+  </p><p class="player p_c3"><b></b>
+    다만, 당신은 달랐을지도 모릅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    저 어깨가지 오는 갈색 머리카락을 봐요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어딘가 기시감이 느껴지지 않습니까. 
+  </p><p class="player p_c1"><b>서이본</b>
+    아니, 있다. 
+  </p><p class="player p_c3"><b></b>
+    "진아사." 
+  </p><p class="player continued-line p_c3"><b></b>
+    당신이 부른 이름이었습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그 발언은 몇 가지의 상황을 만들어내었습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    파트너가 같은 방향을 바라보게 하였습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    카트가 이동하면서 굴러가던 바퀴가 멈춥니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    식은땀을 옷에 대고서 닦아내는 듯한 소리가 들리기도 했고. 
+  </p><p class="player continued-line p_c3"><b></b>
+    침을 삼켜내는 듯한 소리가 들리기도 했습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아무렇지 않은 듯 다시 밀어내는 걸음이 뒤를 잇습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    차이점이 있다면 좀 더 서두른다는 걸까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    1402호를 향해 가까워지기 직전에 배다예는 말했습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어쩌면 다급한 외침이었을지도 모릅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    또는 성급했을까요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아진짜개재밋는데엔딩이코앞이라눈물나네 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    "지금까지 저지른 건 단순한 교통법 위반입니다. 과속과 차량에서의 상습적인 위협. 죄목을 따진다고 해도 그것으로 끝날 수 있었습니다." 
+  </p><p class="player p_c3"><b></b>
+    음절 하나하나가 떨어집니다. 
+  </p><p class="player p_c2"><b>배다예</b>
+    "비록 과속이 아니라 사냥이었다고 해도." 
+  </p><p class="player p_c3"><b></b>
+    동시에 파란 바구니가 복도를 나뒹굴었어요. 
+  </p><p class="player p_c2"><b>배다예</b>
+    "사고가 아니라 사건이었다고 해도······." 
+  </p><p class="player p_c3"><b></b>
+    기다란 회칼을 손에 든 여자가 이쪽을 돌아보는 순간. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    잠만 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    "조서에는 그것만 남을 수 있었어요." 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    회칼 존나 살벌한데요 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    눈물에 젖은 낯이 일그러집니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    아니 난 약물 주입일 줄 알앗는데 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    너무 본격적이잖아(W) 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    그래요. 
+  </p><p class="player p_c2"><b>배다예</b>
+    "지금 그 문을 연다면 달라지는 겁니다. 진아사 씨." 
+  </p><p class="player p_c3"><b></b>
+    형사와 범인이 서로를 바라봅니다. 
+  </p><p class="player p_c1"><b>서이본</b>
+    흉기 내려놓으십시오. 아직 다른 길이 있습니다. 
+  </p><p class="player p_c3"><b></b>
+    기껏해야 8M의 거리. 
+  </p><p class="player continued-line p_c3"><b></b>
+    세 사람은 서로를 마주 봅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    진아사는 자신의 이름을 먼저 불렀던 서이본을 바라봅니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    똑같은 기시감을 느끼는 듯하더니 자조어린 웃음을 지어버렸어요. 그걸 정말 웃음이라 할 수는 없을 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    자기혐오의 일부일 뿐. 
+  </p><p class="player p_c1"><b>서이본</b>
+    어떤 기분인지 압니다. 상투적인 위로가 아니라, 정말로요. 
+  </p><p class="player p_c16"><b>진아사</b>
+    .... 이렇게 될 줄 알았다면 도움을 받지 않는 건데. 
+  </p><p class="player continued-line p_c16"><b>진아사</b>
+    역시 그곳에 멈췄으면 안되는 거였나. 그게 내 불운이었다니. 
+  </p><p class="player p_c3"><b></b>
+    진아사는 손을 들어 보입니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    회칼을 잡지 않은 손은 희미하게 떨립니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    손가락을 말아쥐어 보네요. 무언가를 쥐는 듯한 동작. <br> 
+  </p><p class="player p_c1"><b>서이본</b>
+    아뇨, 그게 당신의 가장 큰 행운이었을겁니다. 
+  </p><p class="player p_c3"><b></b>
+    서이본은, 배다예는 그게 무엇을 의미하는지 알고 있습니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    핸들. 자동차의 핸들. 여태껏 그녀의 무기가 되어주었던 것을 되새김질하듯 허공을 움켜쥡니다. 
+  </p><p class="player p_c16"><b>진아사</b>
+    저는 이미... 세 사람의 삶을 변하게 했어요. 
+  </p><p class="player continued-line p_c16"><b>진아사</b>
+    하하... 무슨 의미가 있는지 참... (중얼거리더니...) 
+  </p><p class="player p_c3"><b></b>
+    수사(搜査)란, 범죄의 혐의 유무를 알기 위해 증거를 수집하여 범인을 찾고자 하는 일. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그러므로 짧은 시간 내로 누구보다 상대를 파고들어야 합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    해묵은 일기장을 펼쳐내듯이. 오래된 인형의 가슴팍을 눌러보듯이. 실밥 하나의 근원까지도 파헤치지요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어쩌면 이 행동은 알아간다는 것입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    누군가를 알아간다는 건 곧 이해를 끌어올립니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    눈앞에 있는 범죄자는 세 사람의 신체적인 결손을 이루어냈습니다. 심지어 살인미수로 현행범 체포를 하더라도 될 상황입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    범죄 사실만 보면 그렇지만, 그럴 테지만······. 
+  </p><p class="player continued-line p_c3"><b></b>
+    알아버렸습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이 사람이 지금까지 어떤 삶을 살아왔는지 알고 있잖아요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    "내게 사과도 하지 않고, 용서를 구하지도 않은 사람들." 
+  </p><p class="player continued-line p_c3"><b></b>
+    이유 모를 적의에도 오해를 풀고 싶다던 아이. 
+  </p><p class="player continued-line p_c3"><b></b>
+    "어째서 나만 멈춰야 하는 거죠?" 
+  </p><p class="player continued-line p_c3"><b></b>
+    물 밖에 있는 게 힘들다고 말하던 고등학생. 
+  </p><p class="player continued-line p_c3"><b></b>
+    "내 꿈을 빼앗은 대가를 나라도 줘야 하잖아." 
+  </p><p class="player continued-line p_c3"><b></b>
+    청춘이라는 단어조차 괴롭게 물든 사람. 
+  </p><p class="player continued-line p_c3"><b></b>
+    "나라도, 그렇게라도······." 
+  </p><p class="player continued-line p_c3"><b></b>
+    스스로의 이름마저 미워하게 된, 
+  </p><p class="player continued-line p_c3"><b></b>
+    진아사. 
+  </p><p class="player continued-line p_c3"><b></b>
+    여전히 품에는 경찰수첩이 들어있습니다. 뒷주머니에는 수갑이 들어있을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    부피와 면적이 달라진 건 없을 텐데. 유난히 무거웠을까요. 혹은 여전히 같은 무게일까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아무도 짐작할 수 없을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    고객과 점원. 동전과 자판기. 달걀과 팬케이크. 순서가 정해져 있는 것들이 그러하듯이 범죄자와 경찰도 같을 것입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    두 역할 사이에도 순서라는 게 있습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    범행으로 물꼬를 트는 게 범인이라면 마무리를 짓는 건 언제나 경찰이지 않습니까. 모든 드라마나 영화, 혹은 애니메이션에서 그러하듯이. 
+  </p><p class="player continued-line p_c3"><b></b>
+    체포하기를 바라나요. 혹은, 책임이 버거워서 포기하기를 원하나요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    무엇이든 선택은 당신의 몫입니다. 파트너와 함께 맞이하는 첫 번째 사건. 우리가 마주하게 되는 끝은······. 
+  </p><p class="player continued-line p_c3"><b></b>
+    어떤 풍경일까요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    끄응... 엔딩분기점입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    ㅠㅠ 
+  </p><p class="player continued-line p_c3"><b></b>
+    이본이라면 뭘 선택할지너무나당연하지만. 
+  </p><p class="player continued-line p_c3"><b></b>
+    아무튼행동해주시면됩니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    롤플 치고 계셔요 저 잠만 화장실을... 
+  </p><p class="player continued-line p_c3"><b></b>
+    냥 왔어요 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    네. 아무도 용서를 구하거나, 사과를 하는 일은 생기지 않습니다. 멈춰줄 사람도 없어서, 필연적으로 멈추지 않는 사람만 남게 되고요.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    저도 비슷한 상황에서 멈추지 않고 달려봤습니다만, 가속하면 그 대가가 상당했습니다. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    ...이건 먼저 가속의 종착점에 도착해본 개인으로서의 의견입니다만, 속이 후련한건 잠깐이었습니다. 그 뒤의 후회하는 시간이 더 길었고···당신은 그걸 겪지 않기를 바랍니다.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아프기만 한 10년은 생각보다 길더라고요.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    .........시발어떠해 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    그러니까... 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    어떡해 
+  </p><p class="player continued-line p_c3"><b></b>
+    이거너무10년전서이본한테도필요한얘기잖아 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    (수갑 꺼내들고, 다가가 진아사의 양 손목에 채운다.) 이게 당신의 브레이크입니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    덩..................... 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    와씹 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    와잠만... 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    와이게뭐지? 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    이해는 어쩔 수 없습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    사람이기에 겪을 수밖에 없어요. 그렇다고 한들 책임과 의무를 놓을 이유는 되지 못합니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    무신경과 무모함으로 시달려온 사람에게. 당신마저도 똑같이 굴 필요는 없지 않나요. 동정은 만용입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    과거가 안타깝다고 해서 저지르게 될 비극을 막지 못한다니. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그러지 말아야 해요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    누구보다 잘 알고 있는 건 바로 당신이었을 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    주머니에 넣어두었던 수갑을 꺼내 듭시다. 미란다 원칙을 말해보아요. 두 손으로 이 사건을 마무리 짓는 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    언제나 바랐던 꿈처럼. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    잠만.이렇게몰아치지마라오타쿠버거우니까 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    쨍그랑. 
+  </p><p class="player continued-line p_c3"><b></b>
+    유리 깨지는 소리를 내며 회칼이 떨어집니다. 진아사는 두 손목을 내어준 채로 고개를 틀었습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    무심결에 따라서 고개를 틀면, 저 멀리 떠오르는 해를 봅니다. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    주홍빛이 얼굴 위로 번지고 있어요. <br> 
+  </p><p class="player continued-line p_c3"><b></b>
+    선연한 색이 비추었을 때 말했습니다. 여린 음성이 가까운 거리에서 울립니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    아잠만 
+  </p><p class="player continued-line p_c3"><b></b>
+    자동스크립ㅌ 쓰고 있었는데 
+  </p><p class="player continued-line p_c3"><b></b>
+    오류남 
+  </p><p class="player p_c1"><b>서이본</b>
+    오타쿠 몰아치느라 눈치도 못챔 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그냥 아드레날린으로 데자뷰겪는줄 
+  </p><p class="player p_c3"><b></b>
+    ㅁㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c16"><b>진아사</b>
+    “상담실의 소파에서 나란히 잠들었다가 깬 적이 있어요.”<br> 
+  </p><p class="player continued-line p_c16"><b>진아사</b>
+    “상담 선생님이 잠든 사이에 저 혼자 이른 새벽의 창밖을 보았죠.” 
+  </p><p class="player continued-line p_c16"><b>진아사</b>
+    “아침이······.” 
+  </p><p class="player continued-line p_c16"><b>진아사</b>
+    “아침이, 오네요.”<br> 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    잠만................................. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    어떤 생각을 하고 있을까요. 어떤 기분이 들까요.  
+  </p><p class="player continued-line p_c3"><b></b>
+    도무지 이해하지 못할 테지만 다시 회칼을 집어 들지는 않을 겁니다.  
+  </p><p class="player continued-line p_c3"><b></b>
+    전혀 논리적이지 않지만 직감이라고 해도 좋을 겁니다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    아사님께 할 ㅁ ㅏㄹ 있으시면 
+  </p><p class="player continued-line p_c3"><b></b>
+    기다림. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    오고 있죠, 아침이.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    해는 언제나 다시 뜰테니까. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    날왜데려왓나햇더니 서이본정신쑤시려고 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    웃긴사람이네이거............ 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    그때, 예고도 어깨동무하듯이 배다예는 팔을 둘러옵니다. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    ㅋ 
+  </p><p class="player continued-line p_c3"><b></b>
+    아니쑤신다기보다는 
+  </p><p class="player continued-line p_c3"><b></b>
+    ...치료? 
+  </p><p class="player p_c1"><b>서이본</b>
+    황당 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    안그래도 한줌인 이성 깎인거 보세요 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    선배랑 이렇게 될 줄은 몰랐는데. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    10년 전의 우리가 상상이라도 했을까요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아니그거는 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    그거는어쩔수없지크툴루의부름이니까 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    못했지. 그때의 난 정상적으로 사회에서 살아가는 모습조차 못 그렸던 때였으니까.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    최악인 것 같아도 포기하지 않고 살아가다보면 결국엔 길은 생기더라. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    사람은 사람에 의해서... 내가 태백고등학교 망할동아리에서 너희 만난 것처럼. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    분명 내일도 나은 하루가 되겠지. 사람과 함께 살아가다 보면. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그러려면 우선 차부터 바꿀까.  
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    저건 나은 삶을 살기에는 무리가 있다.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아진짜 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player p_c1"><b>서이본</b>
+    절대 훈훈하게 못 끝냄 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    그러게요, 난 나의 길을. 선배는 선배의 길을 찾은 것 같아서 다행이에요.  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    개미가 처음에는 집을 찾기 위해서 아무리 빙빙 돌고 이리저리 헤매도, 결국 나중에는 집을 한 번에 찾아내잖아요. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    긿을 잃어버린다는 건... 결국에는 찾아내는 과정이니까. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    내딸이야진짜로 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    배다예내가키울래.... 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아냐식비감당할자신없다독립해라 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    아까도 그랬죠. 어렸을 때는 선배랑 나랑 닮은 구석이 있는 것 같았다고. 나에 대한 실망감과 혐오감까지 모조리 선배에 대한 감정으로 치환해 괜히 심술을 부렸던 것 같은데...  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    이제는... 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㄴㄴ이러지말긔이러지말자아냐이러고살자마음이좋아서회피돋는다 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c2"><b>배다예</b>
+    (사람은 사람에 의해 상처 받고, 사람에 의해 구원받는다. 서이본의 말마따나 사람과 함께 살아가다 보면, 내일의 우리는.)  
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    파트너. 우리는 파트너니까요. 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    선배, 이거 받아요. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    ㄴㄴㄴㄴㄴ회피할래내딸이다컷다고?믿지않음.나는몰르는일. 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    받아보면 손아귀에 잡힌 것은 무전기입니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    당신도 갖고 있을 텐데 왜 주는 거죠. 어떠한 말을 꺼내기도 전에 배다예는 말합니다.  
+  </p><p class="player p_c2"><b>배다예</b>
+    보고해야죠. 사건 해결했다고. 콜사인은 기억하고 있죠? 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c2"><b>배다예</b>
+    아웃겨 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    나롤플칠동안 사담탭에서 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    뭘하고계셧던거야 하 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player p_c1"><b>서이본</b>
+    그야 물론, (무전 전원을 키며—) 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    —기수 405.  
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    싫어 우리 여기 살자 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    코코포에 살자 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    나빼고 행복해지지마 
+  </p><p class="player p_c2"><b>배다예</b>
+    ㅋ 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    하진짜 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    킁.. 파트너가 된 너죽나살 에유도 공식으로 채택합시다 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    그냥 다중유니버스합시다 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    이것도공식이고저것도공식이고 
+  </p><p class="player p_c1"><b>서이본</b>
+    그냥 다중유니버스합니다 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    이것도공식이고저것도공식이고 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아.........진짜좋으네. 
+  </p><p class="player p_c2"><b>배다예</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    끄응... 근데 정말 좋은데 이거 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    이본이데리고파트너타이만더가야지 
+  </p><p class="player continued-line p_c2"><b>배다예</b>
+    퍙님의견은중요하지않음 
+  </p><p class="player p_c1"><b>서이본</b>
+    흑.............조아................. 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    여기서살거야 파트너에유에 영원히 갇히자 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    기수 405. 강력팀 본부 응답 바람. 
+  </p><p class="player continued-line p_c3"><b></b>
+    이제는 당신이 내뱉습니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    정말 끝이라는 걸 실감했을까요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    첫 번째 사건. 첫 번째 종결. 
+  </p><p class="player continued-line p_c3"><b></b>
+    앞으로도 기억에 오래 남을 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    동시에 짐작했을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    오늘의 기억이 까맣게 지워질 만큼 두 사람은 수많은 장면에 들어서게 될 겁니다. 
+  </p><p class="player continued-line p_c3"><b></b>
+    그건 영화라기엔 볼품없고, 드라마라기엔 극적이지도 못하고, 애니메이션이라기엔 멋들어지지도 않을 테지만. 
+  </p><p class="player continued-line p_c3"><b></b>
+    적어도 혼자 걷는 일은 없을 거예요. 
+  </p><p class="player continued-line p_c3"><b></b>
+    ENDING 2│달리자, 아무도 따라잡을 수 없을 스피드로. 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player p_c1"><b>서이본</b>
+    달리자!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+  </p></div><div class="tab tabMain"><div class="tabtitle">메인</div><p class="player continued-line p_c3"><b></b>
+    시나리오 보상 │ 체력 및 이성 1D3 회복, 성과금으로 인한 재력 +1D5.<br> 
+  </p></div><div class="tab tabTalk"><div class="tabtitle">잡담</div><p class="player continued-line p_c3"><b></b>
+    끄응.... 
+  </p><p class="player continued-line p_c3"><b></b>
+    여기까지입니닷 
+  </p><p class="player continued-line p_c3"><b></b>
+    ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ 
+  </p><p class="player p_c1"><b>서이본</b>
+    너무너므 즐거웟다.................... 
+  </p><p class="player p_c3"><b></b>
+    그러게요 아니 우리 좀 지체되긴햇지만 4시부터 출발했는데 
+  </p><p class="player continued-line p_c3"><b></b>
+    11시까지 
+  </p><p class="player continued-line p_c3"><b></b>
+    중간에 20분쉬고 
+  </p><p class="player p_c1"><b>서이본</b>
+    가지말자이대로내소반가자 npc는 천명호 앉혀녾고 서이본은 둘중 누굴 말려야할지 고민하는거야 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아 
+  </p><p class="player p_c3"><b></b>
+    아 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c3"><b></b>
+    내소반 저 한번도 안가봄 좋아요 소개팅결사반대해봅시다 
+  </p><p class="player p_c1"><b>서이본</b>
+    세션 3시간째부터 두통생기는거 생각도 안낫음 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    진짜 ㅈㄴ재밋엇다 
+  </p><p class="player p_c3"><b></b>
+    저도진짜재밋엇어요... 정말 시간모르고 
+  </p><p class="player continued-line p_c3"><b></b>
+    안되겠다 일본경시청 시날 죄다 한국으로 개변해서 너죽나살 영원히 뺑이치게합시다 
+  </p><p class="player p_c1"><b>서이본</b>
+    아..............너죽나살 밥존나많아졌다 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    민달퍙배불르죠 개행복하죠 
+  </p><p class="player p_c3"><b></b>
+    저도너무행복합니다지금 
+  </p><p class="player continued-line p_c3"><b></b>
+    아좋다진짜... 
+  </p><p class="player continued-line p_c3"><b></b>
+    진짜좋다... 
+  </p><p class="player continued-line p_c3"><b></b>
+    좋다는말빼고할수없는상태 
+  </p><p class="player p_c1"><b>서이본</b>
+    엔딩 브금 나올때 좋아서 괴성지를번함 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    진짜말도안되는타이밍이다 
+  </p><p class="player p_c3"><b></b>
+    킁... 요네켄 감전 정말 좋은 노래죠 
+  </p><p class="player continued-line p_c3"><b></b>
+    저 처음에 일렉보더 가면서 듣고 너무 좋아서 
+  </p><p class="player continued-line p_c3"><b></b>
+    그뒤로 플리에 짱박아둠 
+  </p><p class="player continued-line p_c3"><b></b>
+    그리고 저는 
+  </p><p class="player continued-line p_c3"><b></b>
+    그 병원에서 
+  </p><p class="player continued-line p_c3"><b></b>
+    정채은 심문? 조사?하고도 감 못 잡아서 
+  </p><p class="player p_c1"><b>서이본</b>
+    아개웃기네 
+  </p><p class="player p_c3"><b></b>
+    뭐지  지엠님이거진짜뭐에요저감을못잡겠어요 
+  </p><p class="player p_c1"><b>서이본</b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player p_c3"><b></b>
+    다가올 총선에서 유력후보에게 타격을 입히기 위한 반대정치세력의 공작? 
+  </p><p class="player continued-line p_c3"><b></b>
+    이럼 
+  </p><p class="player p_c1"><b>서이본</b>
+    아제발 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    진짜개웃기네ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    아 시나리오 진짜너무좋았다 
+  </p><p class="player p_c3"><b></b>
+    진짜좋아하는시나리오입니다.... 애호해야돼 
+  </p><p class="player continued-line p_c3"><b></b>
+    파트너라는거정말좋죠 
+  </p><p class="player continued-line p_c3"><b></b>
+    번개보다빨리달려야한다는것도. 
+  </p><p class="player p_c1"><b>서이본</b>
+    고속도로밀어버리는 시나리오가 아니었다니.............. 
+  </p><p class="player p_c3"><b></b>
+    아니 저는 그거 
+  </p><p class="player continued-line p_c3"><b></b>
+    드립인줄알앗는데 
+  </p><p class="player continued-line p_c3"><b></b>
+    정말고속도로밀어버리는시나리오? 
+  </p><p class="player continued-line p_c3"><b></b>
+    인줄알고계셧던거라고요? 
+  </p><p class="player continued-line p_c3"><b></b>
+    하 
+  </p><p class="player continued-line p_c3"><b></b>
+    ㅠㅠ 
+  </p><p class="player p_c1"><b>서이본</b>
+    아니 다 고속도로 밀어버리는 전재준밖에 안나오길래 
+  </p><p class="player continued-line p_c1"><b>서이본</b>
+    그런, 그런 내용인 줄 알았는데 
+  </p><p class="player p_c3"><b></b>
+    ㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c3"><b></b>
+    ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 
+  </p><p class="player continued-line p_c3"><b></b>
+    근데실제로전재준한번되셧으니까. 
+  </p><p class="player p_c1"><b>서이본</b>
+    도로에서 용의자랑 추격전 벌이는 줄 알앗는데 감동스토리엿잔아;; 
+  </p><p class="player p_c3"><b></b>
+    ㅠㅠ 흑.... 아무튼 탐라에서 뵈어요. 
+  </p><p class="player p_c1"><b>서이본</b>
+    녜...................굿나...............탐라에서봐용............ 
+  </p></div></div><script>document.querySelectorAll('.toggle-switch input').forEach(i => { i.onchange = function(){ document.querySelectorAll('.'+this.dataset.target).forEach(el => el.classList.toggle('hidden-tab', !this.checked)); }; });</script></div></body></html>
